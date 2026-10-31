@@ -1,0 +1,1908 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
+<meta content="#090d22" name="theme-color"/>
+<meta content="Relaxed Tokyo itinerary for four friends from India, 27–31 January 2027, with airport-to-hotel routing, Indian lunch and dinner stops, timed sightseeing, dual-currency costs, booking links and persistent checklists." name="description"/>
+<title>TOKYO // FOUR — Relaxed Plan · 27–31 Jan 2027</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://images.unsplash.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&amp;family=Noto+Sans:wght@400;500;600;700;800;900&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+    :root {
+      --ink: #080b1b;
+      --panel: #111734;
+      --panel-2: #171e43;
+      --paper: #f8f7ef;
+      --text: #f7f8ff;
+      --muted: #aeb8d8;
+      --line: rgba(255,255,255,.12);
+      --red: #ff4e57;
+      --yellow: #ffd84d;
+      --cyan: #58e7ff;
+      --blue: #4f7cff;
+      --violet: #a879ff;
+      --green: #64e6a5;
+      --orange: #ff9d4d;
+      --danger: #ff7179;
+      --shadow: 8px 8px 0 rgba(0,0,0,.45);
+      --radius: 22px;
+      --max: 1240px;
+      --nav-h: 72px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 12% 5%, rgba(88,231,255,.14), transparent 24rem),
+        radial-gradient(circle at 90% 12%, rgba(255,78,87,.13), transparent 28rem),
+        linear-gradient(180deg, #080b1b 0%, #0a1029 40%, #080b1b 100%);
+      font-family: "Noto Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .18;
+      background-image: radial-gradient(circle, rgba(255,255,255,.75) 1px, transparent 1.2px);
+      background-size: 18px 18px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,.8), transparent 72%);
+      z-index: -1;
+    }
+
+    a { color: inherit; }
+    button, input { font: inherit; }
+    button { cursor: pointer; }
+    img { max-width: 100%; display: block; }
+
+    .skip-link {
+      position: fixed;
+      left: 12px;
+      top: -60px;
+      z-index: 9999;
+      background: var(--yellow);
+      color: var(--ink);
+      padding: 10px 16px;
+      border-radius: 12px;
+      font-weight: 900;
+      transition: top .2s ease;
+    }
+    .skip-link:focus { top: 12px; }
+
+    .site-shell { min-height: 100vh; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(18px);
+      background: rgba(8,11,27,.84);
+      border-bottom: 1px solid var(--line);
+      box-shadow: 0 12px 40px rgba(0,0,0,.25);
+    }
+
+    .topbar-inner {
+      width: min(var(--max), calc(100% - 28px));
+      min-height: var(--nav-h);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      flex: 0 0 auto;
+      border: 0;
+      background: transparent;
+      color: var(--text);
+      padding: 0;
+      text-align: left;
+    }
+
+    .brand-mark {
+      width: 44px;
+      height: 44px;
+      border-radius: 15px;
+      display: grid;
+      place-items: center;
+      color: var(--ink);
+      background: linear-gradient(135deg, var(--yellow), var(--orange));
+      border: 2px solid #fff;
+      box-shadow: 4px 4px 0 rgba(255,78,87,.7);
+      font-size: 24px;
+    }
+
+    .brand-copy strong {
+      display: block;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: .95rem;
+      letter-spacing: .02em;
+      white-space: nowrap;
+    }
+    .brand-copy span {
+      display: block;
+      color: var(--muted);
+      font-size: .72rem;
+      margin-top: 2px;
+      white-space: nowrap;
+    }
+
+    .page-nav {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      overflow-x: auto;
+      overscroll-behavior-inline: contain;
+      scrollbar-width: none;
+      padding: 10px 2px;
+      flex: 1;
+    }
+    .page-nav::-webkit-scrollbar { display: none; }
+
+    .nav-btn {
+      flex: 0 0 auto;
+      border: 1px solid var(--line);
+      color: var(--muted);
+      background: rgba(255,255,255,.04);
+      padding: 10px 13px;
+      border-radius: 999px;
+      font-size: .82rem;
+      font-weight: 800;
+      transition: .2s ease;
+      white-space: nowrap;
+    }
+    .nav-btn:hover,
+    .nav-btn:focus-visible {
+      color: var(--text);
+      border-color: rgba(88,231,255,.55);
+      transform: translateY(-1px);
+      outline: none;
+    }
+    .nav-btn[aria-current="page"] {
+      color: var(--ink);
+      background: var(--cyan);
+      border-color: var(--cyan);
+      box-shadow: 0 0 26px rgba(88,231,255,.32);
+    }
+
+    .utility-actions { display: flex; gap: 8px; flex: 0 0 auto; }
+    .icon-btn {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.05);
+      color: var(--text);
+      display: grid;
+      place-items: center;
+      font-size: 18px;
+    }
+    .icon-btn:hover,
+    .icon-btn:focus-visible { border-color: var(--yellow); outline: none; }
+
+    main {
+      width: min(var(--max), calc(100% - 28px));
+      margin: 0 auto;
+      padding: 28px 0 80px;
+    }
+
+    .app-page { animation: pageIn .35s ease both; }
+    .app-page[hidden] { display: none !important; }
+    @keyframes pageIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: none; }
+    }
+
+    .hero {
+      position: relative;
+      min-height: 600px;
+      display: grid;
+      align-items: end;
+      overflow: hidden;
+      border: 2px solid rgba(255,255,255,.17);
+      border-radius: 30px;
+      box-shadow: var(--shadow);
+      background:
+        linear-gradient(100deg, rgba(7,10,28,.98) 8%, rgba(7,10,28,.72) 47%, rgba(7,10,28,.22) 75%),
+        linear-gradient(to top, rgba(7,10,28,.98), transparent 70%),
+        url("https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=2000&q=85") center/cover;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        repeating-linear-gradient(0deg, transparent 0 5px, rgba(255,255,255,.025) 6px 7px),
+        radial-gradient(circle at 84% 20%, rgba(255,216,77,.22), transparent 18rem);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 790px;
+      padding: clamp(28px, 6vw, 72px);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      width: fit-content;
+      padding: 8px 12px;
+      border-radius: 999px;
+      color: var(--ink);
+      background: var(--yellow);
+      font-family: "Space Grotesk", sans-serif;
+      font-size: .76rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      box-shadow: 4px 4px 0 var(--red);
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+    .hero h1 {
+      margin: 24px 0 14px;
+      font-family: "Bangers", "Space Grotesk", sans-serif;
+      font-size: clamp(3.4rem, 10vw, 7.8rem);
+      line-height: .88;
+      letter-spacing: .025em;
+      text-shadow: 4px 5px 0 rgba(0,0,0,.46), 0 0 36px rgba(88,231,255,.15);
+    }
+    .hero h1 span { color: var(--yellow); }
+    .hero-lead {
+      max-width: 650px;
+      color: #e7ebff;
+      font-size: clamp(1rem, 2vw, 1.22rem);
+      line-height: 1.65;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0,1fr));
+      gap: 10px;
+      margin: 28px 0;
+    }
+    .hero-stat {
+      padding: 14px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.17);
+      background: rgba(10,15,40,.76);
+      backdrop-filter: blur(10px);
+    }
+    .hero-stat small { color: var(--muted); display: block; font-size: .72rem; }
+    .hero-stat strong { display: block; margin-top: 4px; font-size: 1rem; }
+
+    .button-row { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 46px;
+      padding: 11px 16px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 900;
+      transition: .2s ease;
+    }
+    .btn:hover,
+    .btn:focus-visible {
+      transform: translateY(-2px);
+      border-color: rgba(255,255,255,.4);
+      outline: none;
+    }
+    .btn-primary { color: var(--ink); background: var(--cyan); border-color: var(--cyan); }
+    .btn-yellow { color: var(--ink); background: var(--yellow); border-color: var(--yellow); }
+    .btn-red { color: #fff; background: var(--red); border-color: var(--red); }
+    .btn-ghost { background: rgba(8,11,27,.52); }
+    .btn-sm { min-height: 38px; padding: 8px 11px; border-radius: 11px; font-size: .78rem; }
+
+    .section { margin-top: 34px; }
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 18px;
+    }
+    .section-kicker {
+      margin-bottom: 7px;
+      color: var(--cyan);
+      font-family: "Space Grotesk", sans-serif;
+      font-size: .76rem;
+      font-weight: 900;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .section-title {
+      margin-bottom: 0;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(1.65rem, 4vw, 2.8rem);
+      letter-spacing: -.035em;
+    }
+    .section-subtitle {
+      margin: 8px 0 0;
+      color: var(--muted);
+      line-height: 1.65;
+      max-width: 750px;
+    }
+
+    .alert {
+      position: relative;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 14px;
+      align-items: start;
+      padding: 18px;
+      border: 1px solid rgba(255,216,77,.35);
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(255,216,77,.12), rgba(255,78,87,.07));
+      overflow: hidden;
+    }
+    .alert::after {
+      content: "";
+      position: absolute;
+      width: 110px;
+      height: 110px;
+      right: -45px;
+      top: -45px;
+      border: 18px solid rgba(255,216,77,.08);
+      border-radius: 50%;
+    }
+    .alert-icon { font-size: 1.5rem; }
+    .alert strong { display: block; margin-bottom: 5px; }
+    .alert p { margin: 0; color: #dce2fa; line-height: 1.55; }
+    .alert-danger { border-color: rgba(255,113,121,.42); background: rgba(255,78,87,.09); }
+    .alert-info { border-color: rgba(88,231,255,.35); background: rgba(88,231,255,.08); }
+    .alert-success { border-color: rgba(100,230,165,.38); background: rgba(100,230,165,.08); }
+
+    .hotel-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 18px;
+    }
+    .hotel-card {
+      position: relative;
+      padding: 24px;
+      border: 2px solid rgba(255,255,255,.12);
+      border-radius: var(--radius);
+      background: linear-gradient(160deg, rgba(23,30,67,.96), rgba(12,17,42,.96));
+      box-shadow: 7px 7px 0 rgba(0,0,0,.35);
+      overflow: hidden;
+    }
+    .hotel-card.winner { border-color: var(--yellow); }
+    .hotel-card.winner::before {
+      content: "BEST FIT";
+      position: absolute;
+      right: -43px;
+      top: 24px;
+      width: 160px;
+      padding: 8px 0;
+      text-align: center;
+      transform: rotate(35deg);
+      color: var(--ink);
+      background: var(--yellow);
+      font-weight: 1000;
+      font-size: .75rem;
+      letter-spacing: .1em;
+    }
+    .hotel-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: start;
+      padding-right: 22px;
+    }
+    .hotel-name { font-family: "Space Grotesk"; font-size: 1.35rem; margin: 0; }
+    .rating {
+      flex: 0 0 auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 7px 10px;
+      border-radius: 12px;
+      color: var(--ink);
+      background: var(--cyan);
+      font-weight: 1000;
+    }
+    .hotel-price {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      margin: 18px 0 10px;
+    }
+    .hotel-price strong { font-size: 2rem; color: var(--yellow); }
+    .hotel-price span { color: var(--muted); font-size: .82rem; }
+    .metric-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 9px;
+      margin: 18px 0;
+    }
+    .metric {
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: rgba(255,255,255,.035);
+    }
+    .metric small { display: block; color: var(--muted); font-size: .7rem; }
+    .metric strong { display: block; margin-top: 5px; font-size: .9rem; }
+    .pros { margin: 16px 0; padding-left: 20px; color: #dce3fb; line-height: 1.7; }
+    .hotel-verdict {
+      display: grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .feature-panel {
+      padding: 22px;
+      border: 2px solid rgba(255,255,255,.15);
+      border-radius: var(--radius);
+      background: rgba(17,23,52,.92);
+      box-shadow: var(--shadow);
+    }
+    .feature-panel.light {
+      color: #161a2c;
+      background: var(--paper);
+      border-color: #1b213b;
+      box-shadow: 8px 8px 0 var(--red);
+    }
+    .feature-panel.light .muted { color: #515a76; }
+    .panel-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 12px;
+      font-family: "Space Grotesk";
+      font-size: 1.2rem;
+    }
+    .muted { color: var(--muted); }
+
+    .assumption-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0,1fr));
+      gap: 12px;
+    }
+    .assumption-card {
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(255,255,255,.035);
+    }
+    .assumption-card span { font-size: 1.4rem; }
+    .assumption-card strong { display: block; margin: 8px 0 4px; }
+    .assumption-card small { color: var(--muted); line-height: 1.5; }
+
+    .page-hero {
+      position: relative;
+      min-height: 330px;
+      display: grid;
+      align-items: end;
+      padding: clamp(24px, 5vw, 48px);
+      border: 2px solid rgba(255,255,255,.16);
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      background-position: center;
+      background-size: cover;
+    }
+    .page-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(100deg, rgba(7,10,28,.96) 6%, rgba(7,10,28,.58) 62%, rgba(7,10,28,.28)), linear-gradient(to top, rgba(7,10,28,.95), transparent 70%);
+    }
+    .page-hero-content { position: relative; z-index: 1; max-width: 820px; }
+    .page-hero h1 {
+      margin: 10px 0;
+      font-family: "Bangers", "Space Grotesk";
+      font-size: clamp(2.8rem, 7vw, 5.5rem);
+      line-height: .95;
+      letter-spacing: .025em;
+    }
+    .page-hero p { color: #e5e9fb; line-height: 1.6; max-width: 720px; }
+    .day-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 18px;
+    }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.18);
+      background: rgba(8,11,27,.62);
+      font-size: .78rem;
+      font-weight: 800;
+    }
+    .chip.free { color: var(--green); }
+    .chip.paid { color: var(--yellow); }
+    .chip.must { color: var(--red); }
+
+    .day-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.55fr) minmax(280px, .65fr);
+      gap: 22px;
+      align-items: start;
+      margin-top: 28px;
+    }
+
+    .timeline {
+      position: relative;
+      display: grid;
+      gap: 16px;
+    }
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 86px;
+      top: 22px;
+      bottom: 22px;
+      width: 3px;
+      border-radius: 999px;
+      background: linear-gradient(var(--cyan), var(--violet), var(--red), var(--yellow));
+      opacity: .72;
+    }
+
+    .timeline-item {
+      position: relative;
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+    .timeline-time {
+      position: sticky;
+      top: calc(var(--nav-h) + 12px);
+      padding-top: 15px;
+      text-align: right;
+      color: var(--cyan);
+      font-family: "Space Grotesk";
+      font-size: .83rem;
+      font-weight: 900;
+      line-height: 1.2;
+    }
+    .timeline-card {
+      position: relative;
+      padding: 18px 18px 16px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: linear-gradient(145deg, rgba(23,30,67,.98), rgba(14,19,47,.98));
+      transition: .2s ease;
+    }
+    .timeline-card::before {
+      content: "";
+      position: absolute;
+      width: 13px;
+      height: 13px;
+      left: -36px;
+      top: 24px;
+      border-radius: 50%;
+      background: var(--yellow);
+      border: 3px solid var(--ink);
+      box-shadow: 0 0 0 2px var(--cyan), 0 0 20px rgba(88,231,255,.65);
+    }
+    .timeline-card:hover { border-color: rgba(88,231,255,.42); transform: translateY(-2px); }
+    .timeline-card.done { opacity: .58; filter: saturate(.6); }
+    .timeline-card.done .timeline-title { text-decoration: line-through; }
+    .timeline-card.optional { border-style: dashed; border-color: rgba(255,216,77,.42); }
+    .timeline-card.rest { background: linear-gradient(145deg, rgba(100,230,165,.11), rgba(14,19,47,.98)); }
+    .timeline-card.sleep { background: linear-gradient(145deg, rgba(168,121,255,.17), rgba(14,19,47,.98)); }
+
+    .timeline-head {
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      gap: 14px;
+    }
+    .timeline-title { margin: 0; font-size: 1.05rem; }
+    .visit-check {
+      width: 26px;
+      height: 26px;
+      flex: 0 0 auto;
+      accent-color: var(--green);
+    }
+    .timeline-copy {
+      color: #cbd3ed;
+      margin: 9px 0 12px;
+      line-height: 1.6;
+      font-size: .92rem;
+    }
+    .timeline-tags { display: flex; flex-wrap: wrap; gap: 7px; }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 8px;
+      border-radius: 9px;
+      color: #dce3fb;
+      background: rgba(255,255,255,.055);
+      font-size: .72rem;
+      font-weight: 750;
+    }
+    .tag.cost { color: var(--yellow); }
+    .tag.transit { color: var(--cyan); }
+    .tag.book { color: var(--red); }
+    .card-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 13px; }
+
+    .day-sidebar {
+      position: sticky;
+      top: calc(var(--nav-h) + 20px);
+      display: grid;
+      gap: 15px;
+    }
+    .summary-card {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(17,23,52,.94);
+    }
+    .summary-card h3 { font-size: 1rem; margin-bottom: 12px; }
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 9px 0;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      color: var(--muted);
+      font-size: .84rem;
+    }
+    .summary-row:last-child { border-bottom: 0; }
+    .summary-row strong { color: var(--text); text-align: right; }
+    .progress-track {
+      height: 10px;
+      margin-top: 12px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: rgba(255,255,255,.1);
+    }
+    .progress-fill {
+      width: 0;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--cyan), var(--green));
+      transition: width .25s ease;
+    }
+
+    .next-nav {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .booking-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 15px;
+    }
+    .booking-card {
+      position: relative;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(17,23,52,.93);
+      overflow: hidden;
+    }
+    .booking-card.urgent { border-color: rgba(255,78,87,.55); }
+    .booking-card .deadline {
+      display: inline-flex;
+      padding: 6px 9px;
+      border-radius: 9px;
+      color: var(--ink);
+      background: var(--yellow);
+      font-size: .73rem;
+      font-weight: 1000;
+      margin-bottom: 12px;
+    }
+    .booking-card.urgent .deadline { background: var(--red); color: #fff; }
+    .booking-card h3 { font-size: 1.05rem; }
+    .booking-card p { color: var(--muted); line-height: 1.58; font-size: .9rem; }
+    .booking-card .price { color: var(--yellow); font-weight: 900; }
+
+    .budget-layout {
+      display: grid;
+      grid-template-columns: minmax(320px,.8fr) minmax(0,1.2fr);
+      gap: 20px;
+      align-items: start;
+    }
+    .budget-form {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: rgba(17,23,52,.95);
+    }
+    .input-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; }
+    .field { display: grid; gap: 7px; }
+    .field.full { grid-column: 1 / -1; }
+    .field label { color: var(--muted); font-size: .76rem; font-weight: 800; }
+    .field input[type="number"] {
+      width: 100%;
+      min-height: 44px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      color: var(--text);
+      background: rgba(255,255,255,.055);
+      outline: none;
+    }
+    .field input[type="number"]:focus { border-color: var(--cyan); box-shadow: 0 0 0 3px rgba(88,231,255,.12); }
+    .toggle-line {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px;
+      border-radius: 13px;
+      background: rgba(255,255,255,.04);
+    }
+    .toggle-line input { width: 20px; height: 20px; accent-color: var(--yellow); }
+
+    .budget-result {
+      padding: 22px;
+      border: 2px solid rgba(88,231,255,.3);
+      border-radius: 22px;
+      background: linear-gradient(145deg, rgba(16,24,58,.98), rgba(9,13,34,.98));
+      box-shadow: var(--shadow);
+    }
+    .budget-score {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 20px;
+      align-items: center;
+    }
+    .budget-score small { color: var(--muted); }
+    .budget-total { font-family: "Space Grotesk"; font-size: clamp(2.1rem,5vw,4.2rem); margin: 5px 0 0; }
+    .status-badge {
+      min-width: 140px;
+      padding: 14px;
+      border-radius: 16px;
+      text-align: center;
+      color: var(--ink);
+      background: var(--green);
+      font-weight: 1000;
+    }
+    .status-badge.over { color: #fff; background: var(--red); }
+    .budget-meter {
+      height: 18px;
+      margin: 20px 0;
+      border-radius: 999px;
+      overflow: hidden;
+      background: rgba(255,255,255,.09);
+      border: 1px solid rgba(255,255,255,.08);
+    }
+    .budget-meter > div {
+      height: 100%;
+      width: 0;
+      background: linear-gradient(90deg, var(--cyan), var(--green), var(--yellow));
+      transition: width .3s ease;
+    }
+    .budget-meter > div.over { background: linear-gradient(90deg, var(--yellow), var(--red)); }
+    .breakdown { display: grid; gap: 9px; }
+    .breakdown-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 14px;
+      padding: 11px 0;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      color: var(--muted);
+    }
+    .breakdown-row strong { color: var(--text); }
+    .breakdown-row.total { font-size: 1.05rem; color: var(--text); border-bottom: 0; }
+    .budget-callout {
+      display: grid;
+      grid-template-columns: repeat(3,minmax(0,1fr));
+      gap: 10px;
+      margin-top: 18px;
+    }
+    .budget-mini {
+      padding: 13px;
+      border-radius: 14px;
+      background: rgba(255,255,255,.045);
+    }
+    .budget-mini small { display: block; color: var(--muted); font-size: .7rem; }
+    .budget-mini strong { display: block; margin-top: 5px; }
+
+    .checklist-layout {
+      display: grid;
+      grid-template-columns: repeat(3,minmax(0,1fr));
+      gap: 16px;
+    }
+    .checklist-card {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(17,23,52,.94);
+    }
+    .checklist-card h3 { font-size: 1rem; }
+    .check-row {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 10px;
+      align-items: start;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,.075);
+      color: #dbe2f9;
+      font-size: .88rem;
+      line-height: 1.45;
+    }
+    .check-row:last-child { border-bottom: 0; }
+    .check-row input { width: 20px; height: 20px; accent-color: var(--green); }
+    .check-row.done span { text-decoration: line-through; opacity: .55; }
+
+    .source-list { display: grid; gap: 10px; }
+    .source-link {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      color: #dce3fb;
+      background: rgba(255,255,255,.035);
+      text-decoration: none;
+    }
+    .source-link:hover { border-color: var(--cyan); }
+
+    .footer {
+      width: min(var(--max), calc(100% - 28px));
+      margin: 0 auto;
+      padding: 0 0 40px;
+      color: var(--muted);
+      text-align: center;
+      font-size: .78rem;
+      line-height: 1.6;
+    }
+
+    .print-only { display: none; }
+
+    @media (max-width: 1040px) {
+      .brand-copy { display: none; }
+      .hero-stats { grid-template-columns: repeat(2,minmax(0,1fr)); }
+      .hotel-verdict { grid-template-columns: 1fr; }
+      .assumption-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+      .day-layout { grid-template-columns: 1fr; }
+      .day-sidebar { position: static; grid-template-columns: repeat(2,minmax(0,1fr)); }
+      .budget-layout { grid-template-columns: 1fr; }
+      .checklist-layout { grid-template-columns: repeat(2,minmax(0,1fr)); }
+    }
+
+    @media (max-width: 760px) {
+      :root { --nav-h: 64px; --shadow: 5px 5px 0 rgba(0,0,0,.42); }
+      .topbar-inner { width: min(100% - 16px, var(--max)); gap: 9px; }
+      .brand-mark { width: 40px; height: 40px; border-radius: 13px; }
+      .utility-actions .icon-btn:first-child { display: none; }
+      .nav-btn { padding: 9px 11px; font-size: .76rem; }
+      main { width: min(100% - 18px, var(--max)); padding-top: 16px; }
+      .hero { min-height: 660px; border-radius: 22px; background-position: 62% center; }
+      .hero-content { padding: 24px 20px 28px; }
+      .hero h1 { font-size: clamp(3.4rem, 19vw, 5.6rem); }
+      .hero-stats { gap: 8px; }
+      .hero-stat { padding: 11px; }
+      .button-row .btn { width: 100%; }
+      .section { margin-top: 28px; }
+      .section-head { display: block; }
+      .hotel-grid, .booking-grid { grid-template-columns: 1fr; }
+      .metric-row { grid-template-columns: 1fr; }
+      .assumption-grid { grid-template-columns: 1fr; }
+      .page-hero { min-height: 390px; border-radius: 22px; padding: 24px 20px; }
+      .timeline::before { left: 15px; }
+      .timeline-item { grid-template-columns: 1fr; gap: 8px; padding-left: 32px; }
+      .timeline-time { position: static; text-align: left; padding: 0; }
+      .timeline-card::before { left: -24px; top: 22px; }
+      .day-sidebar { grid-template-columns: 1fr; }
+      .next-nav { flex-direction: column; }
+      .next-nav .btn { width: 100%; }
+      .input-grid { grid-template-columns: 1fr; }
+      .field.full { grid-column: auto; }
+      .budget-score { grid-template-columns: 1fr; }
+      .status-badge { width: 100%; }
+      .budget-callout { grid-template-columns: 1fr; }
+      .checklist-layout { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 430px) {
+      .topbar-inner { width: 100%; padding: 0 8px; }
+      .brand { display: none; }
+      .page-nav { padding-left: 2px; }
+      .utility-actions { display: none; }
+      .hero-stats { grid-template-columns: 1fr 1fr; }
+      .hero-stat strong { font-size: .88rem; }
+      .page-hero h1 { font-size: 3rem; }
+      .hotel-card, .feature-panel, .budget-form, .budget-result { padding: 17px; }
+      .timeline-card { padding: 16px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation: none !important; transition: none !important; }
+    }
+
+    @media print {
+      body { background: white; color: black; }
+      body::before, .topbar, .utility-actions, .button-row, .next-nav, .card-actions, .footer { display: none !important; }
+      main { width: 100%; padding: 0; }
+      .app-page { display: block !important; page-break-after: always; }
+      .app-page[hidden] { display: block !important; }
+      .hero, .page-hero, .hotel-card, .feature-panel, .timeline-card, .summary-card, .booking-card, .budget-form, .budget-result, .checklist-card {
+        color: black !important;
+        background: white !important;
+        box-shadow: none !important;
+        border: 1px solid #999 !important;
+      }
+      .hero::after, .page-hero::before { display: none; }
+      .hero { min-height: auto; }
+      .hero-content { padding: 24px; }
+      .hero h1, .page-hero h1, .section-title, .hotel-name { color: black !important; text-shadow: none !important; }
+      .muted, .timeline-copy, .section-subtitle, .booking-card p, .summary-row, .check-row { color: #333 !important; }
+      .print-only { display: block; }
+    }
+  
+
+    /* 2027 City Quest refinements */
+    :root { color-scheme: dark; }
+    body { text-rendering: optimizeLegibility; }
+    .top-fx {
+      flex: 0 0 auto;
+      padding: 8px 11px;
+      border: 1px solid rgba(255,216,77,.4);
+      border-radius: 999px;
+      color: var(--yellow);
+      background: rgba(255,216,77,.08);
+      font-family: "Space Grotesk", sans-serif;
+      font-size: .76rem;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+    .money-pair { font-variant-numeric: tabular-nums; font-weight: 900; }
+    .fx-console {
+      display: grid;
+      grid-template-columns: minmax(0,1.15fr) minmax(320px,.85fr);
+      gap: 22px;
+      padding: clamp(20px,4vw,34px);
+      border: 2px solid rgba(88,231,255,.32);
+      border-radius: 24px;
+      background: linear-gradient(135deg, rgba(19,29,70,.98), rgba(10,15,40,.98));
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+    }
+    .fx-console::after {
+      content: "¥  ⇄  ₹";
+      position: absolute;
+      right: 24px;
+      top: -20px;
+      color: rgba(255,255,255,.045);
+      font-family: "Space Grotesk";
+      font-size: 7rem;
+      font-weight: 900;
+      pointer-events: none;
+    }
+    .fx-copy, .fx-form { position: relative; z-index: 1; }
+    .fx-copy h2 { margin: 0 0 10px; font-family: "Space Grotesk"; font-size: clamp(1.55rem,4vw,2.4rem); }
+    .fx-copy p { color: #d8e0fa; line-height: 1.65; margin: 0; }
+    .fx-form {
+      display: grid;
+      gap: 10px;
+      align-content: center;
+      padding: 18px;
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 18px;
+      background: rgba(5,9,27,.58);
+    }
+    .fx-form label { color: var(--cyan); font-weight: 900; }
+    .fx-input-row { display: grid; grid-template-columns: 1fr auto; gap: 10px; }
+    .fx-input-row input {
+      min-width: 0;
+      min-height: 48px;
+      padding: 10px 13px;
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 13px;
+      color: #fff;
+      background: #111834;
+      font-size: 1.05rem;
+      font-weight: 900;
+      outline: none;
+    }
+    .fx-input-row input:focus { border-color: var(--cyan); box-shadow: 0 0 0 3px rgba(88,231,255,.14); }
+    .fx-current { color: #fff; font-size: .84rem; }
+    .fx-current strong { color: var(--yellow); }
+    .fx-status { margin: 0; color: var(--muted); font-size: .75rem; line-height: 1.45; }
+    .fx-status.saved { color: var(--green); }
+    .fx-status.error { color: var(--danger); }
+
+    .flight-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 18px; }
+    .flight-card {
+      padding: 22px;
+      border: 2px solid rgba(255,255,255,.12);
+      border-radius: 22px;
+      background: linear-gradient(150deg, rgba(23,30,67,.98), rgba(11,16,42,.98));
+      box-shadow: 7px 7px 0 rgba(0,0,0,.34);
+    }
+    .flight-card.confirmed { border-color: rgba(100,230,165,.45); }
+    .flight-card.pending { border-color: rgba(255,113,121,.45); }
+    .flight-card-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .flight-icon { font-size: 1.7rem; }
+    .flight-status { padding: 6px 9px; border-radius: 999px; color: var(--ink); background: var(--yellow); font-size: .68rem; font-weight: 1000; letter-spacing: .08em; }
+    .flight-card.pending .flight-status { color: #fff; background: var(--red); }
+    .flight-label { color: var(--cyan); margin: 16px 0 4px; font-size: .78rem; font-weight: 900; text-transform: uppercase; letter-spacing: .09em; }
+    .flight-card h3 { margin-bottom: 14px; font-family: "Space Grotesk"; font-size: 1.5rem; }
+    .flight-route { display: grid; grid-template-columns: 1fr auto 1fr; gap: 12px; align-items: center; padding: 14px; border-radius: 15px; background: rgba(255,255,255,.045); text-align: center; }
+    .flight-route span { color: var(--yellow); font-size: 1.5rem; }
+    .flight-facts { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px; margin: 14px 0; }
+    .flight-facts span { padding: 11px; border: 1px solid rgba(255,255,255,.1); border-radius: 13px; background: rgba(255,255,255,.025); }
+    .flight-facts b, .flight-facts small { display: block; }
+    .flight-facts b { color: var(--muted); font-size: .68rem; text-transform: uppercase; letter-spacing: .06em; }
+    .flight-facts small { margin-top: 4px; color: #fff; font-size: .82rem; line-height: 1.45; }
+    .alert.compact { padding: 13px; margin: 13px 0; }
+    .alert.compact p { font-size: .8rem; }
+    .airport-sequence {
+      display: grid;
+      grid-template-columns: repeat(7,minmax(0,1fr));
+      gap: 8px;
+      margin-top: 16px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(255,255,255,.035);
+    }
+    .airport-sequence div { position: relative; text-align: center; padding: 11px 6px; border-radius: 12px; background: rgba(255,255,255,.035); }
+    .airport-sequence time { display: block; color: var(--cyan); font-family: "Space Grotesk"; font-weight: 900; }
+    .airport-sequence span { display: block; margin-top: 3px; color: var(--muted); font-size: .68rem; }
+    .hotel-grid.single { grid-template-columns: minmax(0,1fr); }
+    .hotel-grid.single .hotel-card { max-width: none; }
+    .overview-day-grid { display: grid; grid-template-columns: repeat(5,minmax(0,1fr)); gap: 12px; }
+    .day-snapshot {
+      min-width: 0;
+      min-height: 225px;
+      padding: 17px;
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 18px;
+      color: var(--text);
+      background: linear-gradient(155deg, rgba(23,30,67,.96), rgba(11,16,42,.98));
+      text-align: left;
+      box-shadow: 5px 5px 0 rgba(0,0,0,.28);
+      transition: .2s ease;
+    }
+    .day-snapshot:hover, .day-snapshot:focus-visible { transform: translateY(-4px); border-color: var(--cyan); outline: none; }
+    .snapshot-day { display: block; color: var(--cyan); font-size: .68rem; font-weight: 900; letter-spacing: .08em; }
+    .day-snapshot strong { display: block; min-height: 58px; margin: 10px 0 7px; font-family: "Space Grotesk"; line-height: 1.25; }
+    .day-snapshot small { display: block; color: #e2e8ff; line-height: 1.45; }
+    .snapshot-route { display: block; margin: 12px 0; color: var(--muted); font-size: .75rem; line-height: 1.5; }
+    .snapshot-cost { display: inline-flex; padding: 7px 9px; border-radius: 10px; color: var(--yellow); background: rgba(255,216,77,.08); font-size: .78rem; font-weight: 900; }
+    .overview-budget-strip {
+      display: grid;
+      grid-template-columns: repeat(3,minmax(0,1fr)) auto;
+      gap: 12px;
+      align-items: center;
+      padding: 18px;
+      border: 2px solid rgba(100,230,165,.35);
+      border-radius: 20px;
+      background: linear-gradient(130deg, rgba(100,230,165,.09), rgba(17,23,52,.98));
+    }
+    .overview-budget-strip small, .overview-budget-strip strong { display: block; }
+    .overview-budget-strip small { color: var(--muted); font-size: .7rem; }
+    .overview-budget-strip strong { margin-top: 4px; font-family: "Space Grotesk"; }
+    .budget-equivalent { margin-top: 3px; color: var(--yellow); font-size: .9rem; font-weight: 900; }
+    .scenario-panel { border-color: rgba(100,230,165,.34); }
+
+    /* stronger readability */
+    .timeline-copy, .booking-card p, .section-subtitle, .alert p, .pros, .check-row { color: #e3e8fb; }
+    .summary-row { color: #c4cde8; }
+    .page-hero::before { background: linear-gradient(100deg, rgba(7,10,28,.98) 5%, rgba(7,10,28,.78) 62%, rgba(7,10,28,.54)), linear-gradient(to top, rgba(7,10,28,.98), rgba(7,10,28,.18) 75%); }
+    .page-hero h1, .hero h1 { text-wrap: balance; }
+    .feature-panel { padding: 22px; border: 2px solid rgba(255,255,255,.15); border-radius: var(--radius); background: rgba(17,23,52,.92); box-shadow: var(--shadow); }
+    .feature-panel.light { color: #161a2c; background: var(--paper); border-color: #1b213b; box-shadow: 8px 8px 0 var(--red); }
+    .feature-panel.light .muted { color: #515a76; }
+
+    @media (max-width: 1120px) {
+      .top-fx { display: none; }
+      .overview-day-grid { grid-template-columns: repeat(3,minmax(0,1fr)); }
+      .airport-sequence { grid-template-columns: repeat(4,minmax(0,1fr)); }
+      .overview-budget-strip { grid-template-columns: repeat(2,minmax(0,1fr)); }
+    }
+    @media (max-width: 760px) {
+      .fx-console, .flight-grid { grid-template-columns: 1fr; }
+      .fx-input-row { grid-template-columns: 1fr; }
+      .fx-input-row .btn { width: 100%; }
+      .flight-facts { grid-template-columns: 1fr; }
+      .airport-sequence { grid-template-columns: repeat(2,minmax(0,1fr)); }
+      .overview-day-grid { grid-template-columns: 1fr; }
+      .day-snapshot { min-height: auto; }
+      .day-snapshot strong { min-height: 0; }
+      .overview-budget-strip { grid-template-columns: 1fr; }
+      .overview-budget-strip .btn { width: 100%; }
+      .hotel-price { align-items: flex-start; flex-direction: column; }
+      .hotel-price strong { font-size: 1.25rem; line-height: 1.45; }
+      .money-pair { white-space: normal; }
+    }
+
+
+    /* Relaxed planner upgrade */
+    .hero-lead { max-width: 840px; }
+    .trip-setup {
+      display: grid;
+      grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr);
+      gap: 20px;
+      align-items: stretch;
+    }
+    .setup-panel, .setup-results {
+      border: 2px solid rgba(255,255,255,.14);
+      border-radius: 24px;
+      background: linear-gradient(150deg, rgba(23,30,67,.98), rgba(10,15,40,.98));
+      box-shadow: var(--shadow);
+    }
+    .setup-panel { padding: clamp(20px,4vw,30px); }
+    .setup-panel h3, .setup-results h3 { margin: 0 0 8px; font-family: "Space Grotesk"; }
+    .setup-panel > p { margin: 0 0 18px; color: #dce3f7; line-height: 1.65; }
+    .setup-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; }
+    .setup-field { display: grid; gap: 6px; }
+    .setup-field.full { grid-column: 1 / -1; }
+    .setup-field label { color: var(--muted); font-size: .72rem; font-weight: 900; letter-spacing: .05em; text-transform: uppercase; }
+    .setup-field input, .setup-field select, .field select {
+      width: 100%;
+      min-height: 48px;
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 13px;
+      padding: 10px 12px;
+      color: #fff;
+      background: #101733;
+      outline: none;
+      font-weight: 800;
+    }
+    .setup-field input:focus, .setup-field select:focus, .field select:focus {
+      border-color: var(--cyan);
+      box-shadow: 0 0 0 3px rgba(88,231,255,.14);
+    }
+    .setup-actions { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 15px; }
+    .setup-status { margin: 0; color: var(--muted); font-size: .78rem; line-height: 1.5; }
+    .setup-status.saved { color: var(--green); }
+    .setup-results { padding: 18px; display: grid; gap: 12px; }
+    .route-result {
+      padding: 17px;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 17px;
+      background: rgba(255,255,255,.035);
+    }
+    .route-result.primary { border-color: rgba(88,231,255,.34); background: linear-gradient(135deg, rgba(88,231,255,.08), rgba(255,255,255,.025)); }
+    .route-result.warning { border-color: rgba(255,216,77,.34); }
+    .route-result-head { display: flex; justify-content: space-between; gap: 12px; align-items: flex-start; }
+    .route-result-head small { color: var(--cyan); font-weight: 900; text-transform: uppercase; letter-spacing: .07em; }
+    .route-result-head strong { color: var(--yellow); font-family: "Space Grotesk"; }
+    .route-line { margin: 10px 0 0; color: #eef2ff; line-height: 1.55; font-size: .87rem; }
+    .route-facts { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 8px; margin-top: 12px; }
+    .route-facts span { padding: 10px; border-radius: 12px; background: rgba(255,255,255,.04); }
+    .route-facts small, .route-facts b { display: block; }
+    .route-facts small { color: var(--muted); font-size: .64rem; text-transform: uppercase; letter-spacing: .05em; }
+    .route-facts b { margin-top: 3px; color: #fff; font-size: .8rem; line-height: 1.4; }
+    .mode-pill { display: inline-flex; align-items: center; gap: 6px; padding: 7px 10px; border-radius: 999px; color: var(--ink); background: var(--green); font-size: .72rem; font-weight: 1000; }
+    .mode-pill.mid { background: var(--yellow); }
+    .mode-pill.late { color: #fff; background: var(--red); }
+    .logic-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 12px; }
+    .logic-card { min-height: 190px; padding: 18px; border: 1px solid rgba(255,255,255,.13); border-radius: 18px; background: rgba(17,23,52,.9); }
+    .logic-card .logic-icon { font-size: 1.6rem; }
+    .logic-card h3 { margin: 10px 0 6px; font-family: "Space Grotesk"; font-size: 1rem; }
+    .logic-card p { margin: 0; color: #dce3f7; font-size: .82rem; line-height: 1.6; }
+    .meal-card { border-color: rgba(255,157,77,.42) !important; background: linear-gradient(145deg, rgba(255,157,77,.08), rgba(17,23,52,.98)) !important; }
+    .meal-label { display: inline-flex; padding: 5px 8px; margin-bottom: 8px; border-radius: 999px; color: var(--ink); background: var(--orange); font-size: .67rem; font-weight: 1000; letter-spacing: .06em; text-transform: uppercase; }
+    .meal-meta { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 8px; margin-top: 12px; }
+    .meal-meta span { padding: 9px; border-radius: 11px; background: rgba(255,255,255,.045); color: #eef2ff; font-size: .72rem; line-height: 1.4; }
+    .pace-strip { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 10px; margin: 14px 0 0; }
+    .pace-strip div { padding: 12px; border: 1px solid rgba(255,255,255,.11); border-radius: 13px; background: rgba(255,255,255,.035); }
+    .pace-strip small, .pace-strip strong { display: block; }
+    .pace-strip small { color: var(--muted); font-size: .64rem; text-transform: uppercase; letter-spacing: .05em; }
+    .pace-strip strong { margin-top: 3px; color: #fff; font-size: .8rem; }
+    .journey-board { display: grid; grid-template-columns: repeat(5,minmax(0,1fr)); gap: 10px; }
+    .journey-step { position: relative; padding: 15px 12px; border: 1px solid rgba(255,255,255,.12); border-radius: 16px; background: rgba(255,255,255,.035); text-align: center; }
+    .journey-step time { display: block; color: var(--cyan); font-family: "Space Grotesk"; font-size: 1rem; font-weight: 900; }
+    .journey-step b { display: block; margin-top: 4px; color: #fff; font-size: .76rem; }
+    .journey-step small { display: block; margin-top: 4px; color: var(--muted); font-size: .65rem; line-height: 1.35; }
+    .booking-card.restaurant { border-color: rgba(255,157,77,.42); }
+    .source-note { padding: 14px; border-left: 4px solid var(--cyan); border-radius: 0 13px 13px 0; background: rgba(88,231,255,.06); color: #dfe7fb; line-height: 1.6; font-size: .82rem; }
+    .timeline-item[hidden] { display: none !important; }
+    .timeline-card.arrival-card { border-color: rgba(88,231,255,.36); }
+    .budget-truth { border-color: rgba(255,113,121,.45) !important; }
+    .budget-truth strong { color: #fff; }
+    .footer strong { color: var(--yellow); }
+
+    @media (max-width: 1040px) {
+      .trip-setup { grid-template-columns: 1fr; }
+      .logic-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+      .journey-board { grid-template-columns: repeat(3,minmax(0,1fr)); }
+    }
+    @media (max-width: 760px) {
+      .setup-grid, .route-facts, .meal-meta, .pace-strip { grid-template-columns: 1fr; }
+      .setup-field.full { grid-column: auto; }
+      .logic-grid { grid-template-columns: 1fr; }
+      .journey-board { grid-template-columns: repeat(2,minmax(0,1fr)); }
+      .setup-actions .btn { width: 100%; }
+    }
+    @media (max-width: 430px) {
+      .journey-board { grid-template-columns: 1fr; }
+      .route-result-head { display: block; }
+      .route-result-head strong { display: block; margin-top: 6px; }
+    }
+
+</style>
+</head>
+<body>
+<a class="skip-link" href="#mainContent">Skip to itinerary</a>
+<div class="site-shell">
+<header class="topbar">
+<div class="topbar-inner">
+<button aria-label="Go to trip overview" class="brand" data-page-target="overview" type="button">
+<span class="brand-mark">🗼</span>
+<span class="brand-copy"><strong>TOKYO // FOUR</strong><span>27–31 Jan 2027 · relaxed plan</span></span>
+</button>
+<div class="top-fx" id="topFxBadge" title="Saved JPY to INR rate"><span class="money-pair" data-jpy="1"></span> = ₹0.60</div><nav aria-label="Trip pages" class="page-nav">
+<button class="nav-btn" data-page-target="overview" type="button">Overview</button>
+<button class="nav-btn" data-page-target="day1" type="button">Day 1</button>
+<button class="nav-btn" data-page-target="day2" type="button">Day 2</button>
+<button class="nav-btn" data-page-target="day3" type="button">Day 3</button>
+<button class="nav-btn" data-page-target="day4" type="button">Day 4</button>
+<button class="nav-btn" data-page-target="day5" type="button">Flight</button>
+<button class="nav-btn" data-page-target="bookings" type="button">Tickets</button>
+<button class="nav-btn" data-page-target="budget" type="button">Budget</button>
+<button class="nav-btn" data-page-target="checklist" type="button">Checklist</button>
+</nav>
+<div class="utility-actions">
+<button aria-label="Print itinerary" class="icon-btn" id="printBtn" title="Print or save as PDF" type="button">🖨️</button>
+<button aria-label="Reset checklists" class="icon-btn" id="resetBtn" title="Reset all checklists" type="button">↺</button>
+</div>
+</div>
+</header>
+<main id="mainContent" tabindex="-1">
+<!-- OVERVIEW -->
+<section class="app-page" data-page="overview">
+<div class="hero">
+<div class="hero-content">
+<span class="eyebrow">India → Tokyo · calm, practical and cost-aware</span>
+<h1>TOKYO <span>// FOUR</span></h1>
+<p class="hero-lead">A realistic four-friends plan that starts with airport formalities, takes you directly to Almont Hotel Nippori to leave luggage, schedules a proper Indian lunch and dinner every day, groups nearby districts together, and protects recovery time instead of filling every minute.</p>
+<div class="hero-stats">
+<div class="hero-stat"><small>Dates</small><strong>27–31 Jan 2027</strong></div>
+<div class="hero-stat"><small>Travellers</small><strong>4 adults · 2 Twin rooms</strong></div>
+<div class="hero-stat"><small>Selected hotel</small><strong>Almont Hotel Nippori</strong></div>
+<div class="hero-stat"><small>Sleep target</small><strong>8.5 hours nightly</strong></div>
+</div>
+<div class="button-row">
+<button class="btn btn-primary" data-page-target="day1" type="button">Open arrival day →</button>
+<button class="btn btn-yellow" data-page-target="budget" type="button">Check real budget</button>
+<button class="btn btn-ghost" data-page-target="bookings" type="button">Booking calendar</button>
+</div>
+</div>
+</div>
+<section class="section">
+<div class="alert alert-danger budget-truth"><div class="alert-icon">₹</div><div><strong>The ₹85,000 ceiling cannot yet be guaranteed</strong><p>The known Tokyo→Kolkata fare, hotel, Indian meals, local transport and tickets already use most of the budget. The India→Tokyo fare is still missing. Enter it on the Budget page; the website will show the honest full-trip result rather than hiding the gap.</p></div></div>
+</section>
+<section class="section">
+<div class="fx-console">
+<div class="fx-copy">
+<span class="section-kicker">One saved rate for every page</span>
+<h2>Set the current JPY → INR conversion</h2>
+<p>Enter how many Indian rupees equal one Japanese yen. Press <b>Save &amp; update</b>; the value is stored in this browser and all fares, meals, tickets and daily totals are recalculated automatically.</p>
+</div>
+<form class="fx-form no-auto-fx" id="fxRateForm">
+<label for="fxRateOverview">INR for ¥1</label>
+<div class="fx-input-row">
+<input aria-describedby="fxStatus" id="fxRateOverview" inputmode="decimal" max="5" min="0.01" step="0.0001" type="number" value="0.6000"/>
+<button class="btn btn-yellow" type="submit">Save &amp; update</button>
+</div>
+<div class="fx-current">Current website rate: <strong id="fxCurrentText">¥1 = ₹0.6000</strong></div>
+<p class="fx-status" id="fxStatus" role="status">The saved rate will be reused when this file is opened again in the same browser.</p>
+</form>
+</div>
+</section>
+<section class="section">
+<div class="section-head"><div><div class="section-kicker">Personalise the airport plan</div><h2 class="section-title">Enter the real arrival details once</h2><p class="section-subtitle">The inbound flight was not visible in your screenshots. This setup avoids inventing it: choose the airport and landing time, save it, and Day 1 updates with realistic immigration, rail, luggage-drop and meal timing.</p></div></div>
+<div class="trip-setup">
+<form class="setup-panel no-auto-fx" id="tripSetupForm">
+<h3>Flight and airport setup</h3>
+<p>Use the airport code printed on the ticket. The calculation includes a conservative international-arrival buffer, ticket/IC-card setup and the walk to the hotel.</p>
+<div class="setup-grid">
+<div class="setup-field"><label for="arrivalAirport">Arrival airport</label><select id="arrivalAirport"><option value="NRT">Narita (NRT)</option><option value="HND">Haneda (HND)</option></select></div>
+<div class="setup-field"><label for="arrivalTime">Scheduled landing · JST</label><input id="arrivalTime" type="time" value="07:30"/></div>
+<div class="setup-field full"><label for="arrivalFlight">Inbound flight number / route</label><input id="arrivalFlight" maxlength="60" placeholder="Example: DEL → NRT · flight number" type="text"/></div>
+<div class="setup-field"><label for="departureAirport">31 Jan departure airport</label><select id="departureAirport"><option value="NRT">Narita (NRT)</option><option value="HND">Haneda (HND)</option></select></div>
+<div class="setup-field"><label for="flightTerminal">Terminal note</label><input id="flightTerminal" maxlength="30" placeholder="Confirm from ticket" type="text"/></div>
+</div>
+<div class="setup-actions"><button class="btn btn-primary" type="submit">Save airport plan</button><p class="setup-status" id="tripSetupStatus" role="status">Planning defaults currently assume Narita and a 07:30 landing.</p></div>
+</form>
+<div class="setup-results">
+<div class="route-result primary">
+<div class="route-result-head"><div><small>Arrival route</small><h3 id="arrivalRouteTitle">Narita Airport → Almont Hotel Nippori</h3></div><strong id="arrivalTransferCost">¥2,470</strong></div>
+<p class="route-line" id="arrivalRouteText">Keisei Skyliner → Nippori Station → five-minute walk → luggage storage at reception.</p>
+<div class="route-facts"><span><small>Landing</small><b id="arrivalLandingDisplay">07:30</b></span><span><small>Airport exit target</small><b id="arrivalExitDisplay">09:05</b></span><span><small>Bags stored by</small><b id="arrivalHotelDisplay">10:50</b></span></div>
+</div>
+<div class="route-result">
+<div class="route-result-head"><div><small>Day 1 load</small><h3>Automatic pace decision</h3></div><span class="mode-pill" id="arrivalModePill">FULL LIGHT DAY</span></div>
+<p class="route-line" id="arrivalModeText">Your current inputs preserve lunch, a nearby walk, hotel rest and an easy east-Tokyo evening.</p>
+</div>
+<div class="route-result warning">
+<div class="route-result-head"><div><small>Departure route</small><h3 id="departureRouteTitle">Nippori → Narita Airport</h3></div><strong id="departureTransferCost">¥2,470</strong></div>
+<p class="route-line" id="departureRouteText">Walk to Nippori, use the first practical Skyliner, and target the airport about 2.5 hours before the shown 08:55 flight.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="section">
+<div class="section-head"><div><div class="section-kicker">Flights and first/last-mile timing</div><h2 class="section-title">What is confirmed and what still needs confirmation</h2><p class="section-subtitle">The return details below come from your screenshot. Airport and terminal remain planning selections until matched against the final ticket.</p></div></div>
+<div class="flight-grid">
+<article class="flight-card pending">
+<div class="flight-card-top"><span class="flight-icon">🛬</span><span class="flight-status">YOU MUST COMPLETE</span></div>
+<p class="flight-label">Arrival · Wednesday, 27 January 2027</p>
+<h3 id="arrivalFlightDisplay">India → Tokyo · flight not entered</h3>
+<div class="flight-route"><strong>India</strong><span>→</span><strong id="arrivalAirportDisplay">Narita (NRT)</strong></div>
+<div class="flight-facts"><span><b>Landing used</b><small id="arrivalLandingFact">07:30 JST</small></span><span><b>Hotel first</b><small>Leave all large bags before sightseeing</small></span><span><b>Hotel check-in</b><small>15:00; luggage storage available earlier</small></span><span><b>Fare entered</b><small id="overviewInboundFare">Not entered</small></span></div>
+<button class="btn btn-sm" data-page-target="budget" type="button">Enter inbound fare</button>
+</article>
+<article class="flight-card confirmed">
+<div class="flight-card-top"><span class="flight-icon">🛫</span><span class="flight-status">SCREENSHOT DETAILS</span></div>
+<p class="flight-label">Departure · Sunday, 31 January 2027</p>
+<h3>Tokyo → Kolkata</h3>
+<div class="flight-route"><strong id="departureAirportDisplay">Narita planning selection</strong><span>→</span><strong>Kolkata</strong></div>
+<div class="flight-facts"><span><b>Flight time</b><small>08:55–23:50</small></span><span><b>Journey</b><small>1 stop · 18 h 25 m</small></span><span><b>Airline shown</b><small>Airtours International Airways</small></span><span><b>Fare / person</b><small id="overviewReturnFare"><span class="money-pair" data-inr="38223"></span></small></span></div>
+<div class="alert alert-info compact"><div class="alert-icon">i</div><div><strong>Verify the operating carrier</strong><p>Check airport, terminal, baggage allowance, transit visa rules and bag-drop deadline on the final e-ticket.</p></div></div>
+</article>
+</div>
+<div aria-label="Departure morning sequence" class="airport-sequence">
+<div><time id="overviewDepWake">04:45</time><span>Wake</span></div><div><time id="overviewDepLeave">05:05</time><span>Leave hotel</span></div><div><time id="overviewDepStation">05:20</time><span>At station</span></div><div><time id="overviewDepTrain">05:45</time><span>Target train</span></div><div><time id="overviewDepAirport">06:25</time><span>Airport target</span></div><div><time>08:10</time><span>At gate</span></div><div><time>08:55</time><span>Flight</span></div>
+</div>
+</section>
+<section class="section">
+<div class="section-head"><div><div class="section-kicker">Selected stay</div><h2 class="section-title">Almont Hotel Nippori — the only hotel in this plan</h2><p class="section-subtitle">It is the best fit because it protects the budget, is about five minutes from Nippori Station, accepts luggage before check-in, and offers direct Narita rail access.</p></div></div>
+<div class="hotel-grid single"><article class="hotel-card winner">
+<div class="hotel-top"><div><p class="section-kicker">Final selection</p><h3 class="hotel-name">Almont Hotel Nippori</h3></div><span class="rating">9.1 ★ screenshot</span></div>
+<div class="hotel-price"><strong id="overviewHotelNight"><span class="money-pair" data-inr="8947"></span></strong><span>shown starting price / room / night</span></div>
+<div class="metric-row"><div class="metric"><small>Check-in / check-out</small><strong>15:00 / 11:00</strong></div><div class="metric"><small>Before-check-in luggage</small><strong>Available at reception</strong></div><div class="metric"><small>Walk from station</small><strong>About 5 minutes</strong></div></div>
+<ul class="pros"><li>Go to the hotel immediately after the airport and leave large luggage before doing anything else.</li><li>Use the JR Yamanote Line for Ueno, Akihabara, Tokyo, Shibuya and Shinjuku.</li><li>The public bath is useful for recovery after winter walking days.</li><li>Two Twin rooms are required so all four friends have separate beds.</li></ul>
+<div class="alert"><div class="alert-icon">🛏️</div><div><strong>Do not book the Small Double shown in the screenshot</strong><p>Confirm two Twin rooms, four separate beds, taxes, cancellation terms and the final total before paying.</p></div></div>
+<div class="card-actions"><a class="btn btn-sm btn-primary" href="https://global.hokke.co.jp/almont-nippori/en/" rel="noopener" target="_blank">Official hotel</a><a class="btn btn-sm" href="https://global.hokke.co.jp/almont-nippori/en/faq/" rel="noopener" target="_blank">Luggage FAQ</a><a class="btn btn-sm" href="https://www.google.com/maps/search/?api=1&amp;query=Almont+Hotel+Nippori" rel="noopener" target="_blank">Map</a></div>
+</article></div>
+</section>
+<section class="section">
+<div class="section-head"><div><div class="section-kicker">Why this pace works</div><h2 class="section-title">Planner decisions informed by Indian traveller experiences</h2><p class="section-subtitle">Recent India-to-Japan accounts repeatedly emphasise airport setup, jet-lag recovery, IC-card convenience and neighbourhood clustering. This plan applies those lessons without copying anyone’s itinerary.</p></div></div>
+<div class="logic-grid">
+<article class="logic-card"><span class="logic-icon">🧳</span><h3>Hotel and bags first</h3><p>Airport → Nippori → reception is the first route. Sightseeing begins only after large luggage is safely stored.</p></article>
+<article class="logic-card"><span class="logic-icon">🕰️</span><h3>Arrival day stays light</h3><p>Immigration and a 3.5-hour time difference are treated as real travel load. The afternoon contains a long shower-and-rest block.</p></article>
+<article class="logic-card"><span class="logic-icon">🗺️</span><h3>Districts are grouped</h3><p>West Tokyo, the bay/tower corridor, and Tokyo Station/Asakusa are handled on separate days to avoid repeated cross-city transfers.</p></article>
+<article class="logic-card"><span class="logic-icon">🍛</span><h3>Meals are appointments</h3><p>Indian lunch and dinner are fixed 60–75 minute seated breaks near the day’s route. Reserve four seats where possible and save one nearby backup before leaving India.</p></article>
+</div>
+</section>
+<section class="section">
+<div class="section-head"><div><div class="section-kicker">Complete trip at a glance</div><h2 class="section-title">One page per day, with breathing room</h2><p class="section-subtitle">Costs are per person, exclude hotel and international flights, and use the exchange rate saved above.</p></div></div>
+<div class="overview-day-grid">
+<button class="day-snapshot" data-page-target="day1" type="button"><span class="snapshot-day">DAY 1 · WED 27 JAN</span><strong>Airport, luggage, recovery &amp; easy east-side evening</strong><small id="arrivalDaySummary">Default: land 07:30 · bags stored about 10:50</small><span class="snapshot-route">Airport → Nippori hotel → local walk → Akihabara → Indian dinner</span><span class="snapshot-cost" id="day1SnapshotCost"><span class="money-pair" data-jpy="7300"></span></span></button>
+<button class="day-snapshot" data-page-target="day2" type="button"><span class="snapshot-day">DAY 2 · THU 28 JAN</span><strong>Meiji, Harajuku, Shibuya Station &amp; Shinjuku</strong><small>07:00 wake · 22:30 sleep</small><span class="snapshot-route">Meiji → Harajuku → Indian lunch → Shibuya → Indian dinner → Shinjuku</span><span class="snapshot-cost"><span class="money-pair" data-jpy="6300"></span></span></button>
+<button class="day-snapshot" data-page-target="day3" type="button"><span class="snapshot-day">DAY 3 · FRI 29 JAN</span><strong>Story museum, Tokyo Tower &amp; bay waterfront</strong><small>Two paid attractions · two long meal rests</small><span class="snapshot-route">Noborito → Kamiyacho → Tokyo Tower → Odaiba/Ariake</span><span class="snapshot-cost"><span class="money-pair" data-jpy="10200"></span></span></button>
+<button class="day-snapshot" data-page-target="day4" type="button"><span class="snapshot-day">DAY 4 · SAT 30 JAN</span><strong>Bullet train, Odawara, Tokyo Station &amp; Asakusa</strong><small>Early dinner · complete packing · 20:15 sleep</small><span class="snapshot-route">Tokyo → Odawara → Tokyo Station → Asakusa → Nippori</span><span class="snapshot-cost"><span class="money-pair" data-jpy="13000"></span></span></button>
+<button class="day-snapshot" data-page-target="day5" type="button"><span class="snapshot-day">DAY 5 · SUN 31 JAN</span><strong>Airport-only departure morning</strong><small id="departureDaySummary">Default Narita target: airport about 06:25</small><span class="snapshot-route">Hotel → airport rail → check-in → security → gate</span><span class="snapshot-cost" id="day5SnapshotCost"><span class="money-pair" data-jpy="3000"></span></span></button>
+</div>
+</section>
+<section class="section">
+<div class="overview-budget-strip"><div><small>Live estimated total / person</small><strong id="overviewBudgetTotal">Calculating…</strong></div><div><small>Remaining against ₹85,000</small><strong id="overviewRemaining">Calculating…</strong></div><div><small>Important</small><strong>Inbound flight must be entered</strong></div><button class="btn btn-primary" data-page-target="budget" type="button">Open calculator →</button></div>
+</section>
+<div class="next-nav"><button class="btn btn-primary" data-page-target="day1" type="button">Begin with airport arrival →</button></div>
+</section>
+<!-- DAY 1 -->
+<section class="app-page" data-page="day1" hidden>
+<div class="page-hero" style="background-image:url('https://images.unsplash.com/photo-1536098561742-ca998e48cbcc?auto=format&amp;fit=crop&amp;w=1800&amp;q=85')">
+<div class="page-hero-content"><span class="eyebrow">Day 01 · Arrival without rushing</span><h1>Airport → Hotel → Recovery</h1><p>The first non-negotiable action is taking every large bag to Almont Hotel Nippori. Sightseeing is intentionally small and automatically reduces if the flight or immigration runs late.</p><div class="day-meta"><span class="chip">Wed · 27 Jan</span><span class="chip" id="day1AirportChip">Narita plan</span><span class="chip paid" id="day1CostChip">~<span class="money-pair" data-jpy="7300"></span></span><span class="chip">Sleep 22:30–07:00</span></div></div>
+</div>
+<div class="pace-strip"><div><small>Walking</small><strong>Light · about 8k–12k steps</strong></div><div><small>Major sights</small><strong>One flexible evening district</strong></div><div><small>Rest</small><strong>Minimum 2 hours in room</strong></div><div><small>Meals</small><strong>Indian lunch + Indian dinner</strong></div></div>
+<div class="day-layout">
+<div class="timeline" data-day="day1">
+<article class="timeline-item"><div class="timeline-time" id="d1LandTime">07:30<br/>–09:05</div><div class="timeline-card arrival-card"><div class="timeline-head"><h3 class="timeline-title">Land, immigration, baggage and customs</h3><input aria-label="Mark airport formalities complete" class="visit-check" data-check-id="d1-airport" type="checkbox"/></div><p class="timeline-copy">Keep the Visit Japan Web QR, passport and hotel address ready before leaving India. The planner uses a conservative international-arrival buffer rather than the fastest possible exit time.</p><div class="timeline-tags"><span class="tag">No sightseeing yet</span><span class="tag cost">Airport process</span><span class="tag">JST is 3 h 30 m ahead of IST</span></div></div></article>
+<article class="timeline-item"><div class="timeline-time" id="d1SetupTime">09:05<br/>–09:45</div><div class="timeline-card"><div class="timeline-head"><h3 class="timeline-title">Connectivity, IC card, small cash and train platform</h3><input aria-label="Mark airport setup complete" class="visit-check" data-check-id="d1-setup" type="checkbox"/></div><p class="timeline-copy">Activate the eSIM, buy or load a Welcome Suica/PASMO, withdraw only a modest yen amount, fill water bottles and move together to the correct railway platform. One person handles tickets while another watches all bags.</p><div class="timeline-tags"><span class="tag">25–40 min buffer</span><span class="tag">Do not split up</span><span class="tag book">Save hotel map offline</span></div></div></article>
+<article class="timeline-item"><div class="timeline-time" id="d1TrainTime">09:45<br/>–10:25</div><div class="timeline-card"><div class="timeline-head"><h3 class="timeline-title" id="d1TrainTitle">Keisei Skyliner → Nippori</h3><input aria-label="Mark airport train complete" class="visit-check" data-check-id="d1-train" type="checkbox"/></div><p class="timeline-copy" id="d1TrainCopy">Take the next reserved-seat Skyliner from Narita to Nippori. Use the luggage racks and keep one phone showing the live route.</p><div class="timeline-tags"><span class="tag transit" id="d1TrainDuration">About 40 min</span><span class="tag cost" id="d1TrainCost"><span class="money-pair" data-jpy="2470"></span></span><span class="tag book">Timetable must be rechecked</span></div><div class="card-actions"><a class="btn btn-sm btn-primary" href="https://www.keisei.co.jp/keisei/tetudou/skyliner/us/" rel="noopener" target="_blank">Official airport rail</a><a class="btn btn-sm" id="arrivalRouteLink" href="https://www.google.com/maps/dir/?api=1&amp;origin=Narita+International+Airport&amp;destination=Almont+Hotel+Nippori&amp;travelmode=transit" rel="noopener" target="_blank">Live route</a></div></div></article>
+<article class="timeline-item"><div class="timeline-time" id="d1BagTime">10:25<br/>–10:50</div><div class="timeline-card"><div class="timeline-head"><h3 class="timeline-title">Walk to hotel and store every large bag</h3><input aria-label="Mark luggage drop complete" class="visit-check" data-check-id="d1-bagdrop" type="checkbox"/></div><p class="timeline-copy">Use Nippori Station East Exit and walk about five minutes. Tell reception the booking name, leave large bags, keep passports and electronics with you, and confirm the 15:00 room check-in.</p><div class="timeline-tags"><span class="tag transit">Station exit + lifts + walk buffer</span><span class="tag cost">Luggage storage: free</span><span class="tag must">Hotel before sightseeing</span></div><div class="card-actions"><a class="btn btn-sm" href="https://global.hokke.co.jp/almont-nippori/en/faq/" rel="noopener" target="_blank">Hotel luggage policy</a><a class="btn btn-sm" href="https://www.google.com/maps/search/?api=1&amp;query=Almont+Hotel+Nippori" rel="noopener" target="_blank">Hotel map</a></div></div></article>
+<article class="timeline-item" data-arrival-visibility="lunch-possible"><div class="timeline-time" id="d1LunchTime">11:00<br/>–12:15</div><div class="timeline-card meal-card"><div class="timeline-head"><div><span class="meal-label">Indian lunch</span><h3 class="timeline-title">Samrat Kitchen · Nippori</h3></div><input aria-label="Mark arrival lunch complete" class="visit-check" data-check-id="d1-lunch" type="checkbox"/></div><p class="timeline-copy">Eat a full seated lunch close to the station before any walking. Order a set meal rather than multiple shared dishes so the group can finish comfortably in about 75 minutes.</p><div class="meal-meta"><span><b>Hours used</b><br/>11:00–15:30 weekdays</span><span><b>Target spend</b><br/><span class="money-pair" data-jpy="1500"></span> each</span><span><b>Distance</b><br/>About 3 minutes from Nippori</span></div><div class="card-actions"><a class="btn btn-sm btn-primary" href="https://tabelog.com/en/tokyo/A1311/A131105/13255855/" rel="noopener" target="_blank">Restaurant details</a><a class="btn btn-sm" href="https://www.google.com/maps/search/?api=1&amp;query=Samrat+Kitchen+Nippori" rel="noopener" target="_blank">Map</a></div></div></article>
+<article class="timeline-item" data-arrival-visibility="early"><div class="timeline-time" id="d1WalkTime">12:25<br/>–14:20</div><div class="timeline-card rest"><div class="timeline-head"><h3 class="timeline-title">Yanaka neighbourhood walk + warm café break</h3><input aria-label="Mark Yanaka walk complete" class="visit-check" data-check-id="d1-yanaka" type="checkbox"/></div><p class="timeline-copy">Stay close to the hotel. Walk through the older Yanaka streets, browse slowly and sit for a warm drink. This is the first activity removed if the airport runs late.</p><div class="timeline-tags"><span class="tag">Easy local loop</span><span class="tag cost">Café cap <span class="money-pair" data-jpy="600"></span></span><span class="tag">No reservation</span></div></div></article>
+<article class="timeline-item"><div class="timeline-time" id="d1RestTime">14:40<br/>–17:00</div><div class="timeline-card rest"><div class="timeline-head"><h3 class="timeline-title">Check-in, shower, bath and full reset</h3><input aria-label="Mark hotel recovery complete" class="visit-check" data-check-id="d1-rest" type="checkbox"/></div><p class="timeline-copy" id="d1RestCopy">Rooms open from 15:00. Shower, change clothes, charge phones and lie down. Keep at least 90 minutes of actual rest; this protects the next three days.</p><div class="timeline-tags"><span class="tag must">Recovery block</span><span class="tag cost">Free</span><span class="tag">No alarms shorter than 75 min</span></div></div></article>
+<article class="timeline-item" data-arrival-visibility="early-mid"><div class="timeline-time" id="d1EveningTime">17:20<br/>–19:05</div><div class="timeline-card"><div class="timeline-head"><h3 class="timeline-title">Akihabara electronics, arcades and hobby floors</h3><input aria-label="Mark Akihabara complete" class="visit-check" data-check-id="d1-akihabara" type="checkbox"/></div><p class="timeline-copy">Take the JR Yamanote Line from Nippori. Choose only two or three large buildings, agree on a fixed meeting point, and keep shopping separate from the core budget.</p><div class="timeline-tags"><span class="tag transit">Direct JR · about 10 min</span><span class="tag cost">Entry free</span><span class="tag">Shopping cap decided beforehand</span></div><div class="card-actions"><a class="btn btn-sm" href="https://www.google.com/maps/dir/?api=1&amp;origin=Almont+Hotel+Nippori&amp;destination=Akihabara+Electric+Town&amp;travelmode=transit" rel="noopener" target="_blank">Route</a></div></div></article>
+<article class="timeline-item" data-arrival-visibility="early-mid"><div class="timeline-time" id="d1DinnerTime">19:20<br/>–20:35</div><div class="timeline-card meal-card"><div class="timeline-head"><div><span class="meal-label">Indian dinner</span><h3 class="timeline-title">Vege Herb Saga · Okachimachi</h3></div><input aria-label="Mark arrival dinner complete" class="visit-check" data-check-id="d1-dinner" type="checkbox"/></div><p class="timeline-copy">Walk or take one short JR stop from Akihabara. The restaurant specialises in Indian vegetarian food and gives the group a quiet seated finish to the travel day.</p><div class="meal-meta"><span><b>Dinner hours</b><br/>17:15–22:30/23:00</span><span><b>Target spend</b><br/><span class="money-pair" data-jpy="2200"></span> each</span><span><b>Group note</b><br/>Reserve or call for four seats</span></div><div class="card-actions"><a class="btn btn-sm btn-primary" href="https://vegeherbsaga.com/" rel="noopener" target="_blank">Official site</a><a class="btn btn-sm" href="https://www.google.com/maps/search/?api=1&amp;query=Vege+Herb+Saga+Okachimachi" rel="noopener" target="_blank">Map</a></div></div></article>
+<article class="timeline-item" data-arrival-visibility="late" hidden><div class="timeline-time" id="d1LateDinnerTime">After check-in</div><div class="timeline-card meal-card"><div class="timeline-head"><div><span class="meal-label">Late-arrival dinner</span><h3 class="timeline-title" id="d1LateDinnerTitle">Eat near Nippori and end the day</h3></div><input aria-label="Mark late arrival dinner complete" class="visit-check" data-check-id="d1-late-dinner" type="checkbox"/></div><p class="timeline-copy" id="d1LateDinnerCopy">When luggage is stored after 13:20, remove all Day 1 sightseeing. Check in, rest and use Samrat Kitchen near Nippori for an early Indian dinner. The trip loses nothing important; the main sights remain on later days.</p><div class="timeline-tags"><span class="tag must">No cross-city outing</span><span class="tag cost">Dinner target <span class="money-pair" data-jpy="2000"></span></span></div></div></article>
+<article class="timeline-item"><div class="timeline-time" id="d1SleepTime">20:45<br/>–22:30</div><div class="timeline-card sleep"><div class="timeline-head"><h3 class="timeline-title">Hotel return, tomorrow prep and sleep</h3><input aria-label="Mark Day 1 sleep prep complete" class="visit-check" data-check-id="d1-sleep" type="checkbox"/></div><p class="timeline-copy" id="d1SleepCopy">Return to Nippori, prepare winter layers and tickets, charge devices and stop phone use at 22:15. Sleep 22:30–07:00 = 8.5 hours.</p><div class="timeline-tags"><span class="tag">8.5 h sleep</span><span class="tag">No convenience-store detour after 21:30</span></div></div></article>
+</div>
+<aside class="day-sidebar"><div class="summary-card"><h3>Live arrival mode</h3><div class="summary-row"><span>Airport</span><strong id="day1SidebarAirport">Narita</strong></div><div class="summary-row"><span>Bags stored by</span><strong id="day1SidebarBag">10:50</strong></div><div class="summary-row"><span>Plan level</span><strong id="day1SidebarMode">Full light day</strong></div><div class="progress-track"><div class="progress-fill" data-progress-for="day1"></div></div><p class="muted" data-progress-text="day1" style="margin:9px 0 0;font-size:.78rem">0 complete</p></div><div class="alert alert-danger"><div class="alert-icon">⏰</div><div><strong>The airport controls Day 1</strong><p id="day1FallbackText">If bags reach the hotel after 11:45, the local walk disappears. After 14:00, sightseeing disappears and the group rests.</p></div></div><div class="summary-card"><h3>Money guardrail</h3><div class="summary-row"><span>Airport transfer</span><strong id="day1SidebarTransfer"><span class="money-pair" data-jpy="2470"></span></strong></div><div class="summary-row"><span>Meals</span><strong>~<span class="money-pair" data-jpy="3700"></span></strong></div><div class="summary-row"><span>City + café</span><strong>~<span class="money-pair" data-jpy="1100"></span></strong></div><div class="summary-row"><span>Working allowance</span><strong id="day1SidebarTotal">~<span class="money-pair" data-jpy="7300"></span></strong></div></div></aside>
+</div>
+<div class="next-nav"><button class="btn" data-page-target="overview" type="button">← Overview</button><button class="btn btn-primary" data-page-target="day2" type="button">Day 2: West Tokyo →</button></div>
+</section>
+<!-- DAY 2 -->
+<section class="app-page" data-page="day2" hidden>
+<div class="page-hero" style="background-image:url('https://images.unsplash.com/photo-1542051841857-5f90071e7989?auto=format&amp;fit=crop&amp;w=1800&amp;q=85')"><div class="page-hero-content"><span class="eyebrow">Day 02 · West Tokyo cluster</span><h1>Meiji → Harajuku → Shibuya</h1><p>A complete west-side day with a quiet morning, Shibuya Station and Crossing, entertainment and design stores, two seated Indian meals, a coffee reset and one evening viewpoint choice—never both.</p><div class="day-meta"><span class="chip">Thu · 28 Jan</span><span class="chip">~16k–19k steps</span><span class="chip paid">Core ~<span class="money-pair" data-jpy="6300"></span></span><span class="chip">Sleep 22:30–07:00</span></div></div></div>
+<div class="pace-strip"><div><small>Transfers</small><strong>One westward route</strong></div><div><small>Standing time</small><strong>Broken by lunch + café + dinner</strong></div><div><small>Evening rule</small><strong>Choose one viewpoint only</strong></div><div><small>Return target</small><strong>Hotel by 21:30</strong></div></div>
+<div class="day-layout"><div class="timeline" data-day="day2">
+<article class="timeline-item"><div class="timeline-time">07:00<br/>–08:15</div><div class="timeline-card rest"><div class="timeline-head"><h3 class="timeline-title">Wake, breakfast and direct JR to Harajuku</h3><input aria-label="Mark Day 2 breakfast complete" class="visit-check" data-check-id="d2-breakfast" type="checkbox"/></div><p class="timeline-copy">Eat a simple hotel or convenience breakfast, leave by 08:15 and take the JR Yamanote Line from Nippori. Carry water, gloves and one foldable shopping bag.</p><div class="timeline-tags"><span class="tag cost">Breakfast target <span class="money-pair" data-jpy="600"></span></span><span class="tag transit">About 30 min</span></div></div></article>
+<article class="timeline-item"><div class="timeline-time">09:00<br/>–10:30</div><div class="timeline-card"><div class="timeline-head"><h3 class="timeline-title">Meiji Jingu forest and shrine</h3><input aria-label="Mark Meiji Jingu complete" class="visit-check" data-check-id="d2-meiji" type="checkbox"/></div><p class="timeline-copy">Use the quiet morning for the long forest approach and main shrine. Walk slowly, keep voices low in prayer areas and take the group photo after exiting.</p><div class="timeline-tags"><span class="tag cost">Free</span><span class="tag">Low-crowd morning</span><span class="tag">90-minute block</span></div><div class="card-actions"><a class="btn btn-sm" href="https://www.meijijingu.or.jp/en/" rel="noopener" target="_blank">Official</a><a class="btn btn-sm" href="https://www.google.com/maps/search/?api=1&amp;query=Meiji+Jingu" rel="noopener" target="_blank">Map</a></div></div></article>
+<article class="timeline-item"><div class="timeline-time">10:35<br/>–11:50</div><div class="timeline-card"><div class="timeline-head"><h3 class="timeline-title">Harajuku streets and design stores</h3><input aria-label="Mark Harajuku complete" class="visit-check" data-check-id="d2-harajuku" type="checkbox"/></div><p class="timeline-copy">Walk Takeshita Street before peak crowding, then move toward Omotesando. Browse only one or two stores; the long shopping block is in Shibuya.</p><div class="timeline-tags"><span class="tag cost">Free entry</span><span class="tag">Shopping separate</span><span class="tag">Do not queue for snacks</span></div></div></article>
+<article class="timeline-item"><div class="timeline-time">12:05<br/>–13:15</div><div class="timeline-card meal-card"><div class="timeline-head"><div><span class="meal-label">Indian lunch</span><h3 class="timeline-title">Indian Restaurant Mumbai · Omotesando</h3></div><input aria-label="Mark Day 2 lunch complete" class="visit-check" data-check-id="d2-lunch" type="checkbox"/></div><p class="timeline-copy">This restaurant sits on the natural walking route from Harajuku toward Shibuya. Sit for a full hour, order lunch sets and refill water before the busiest part of the day.</p><div class="meal-meta"><span><b>Hours</b><br/>Open daily 11:00–23:00</span><span><b>Target spend</b><br/><span class="money-pair" data-jpy="1700"></span> each</span><span><b>Access</b><br/>Near Omotesando B2</span></div><div class="card-actions"><a class="btn btn-sm btn-primary" href="https://english.mumbaijapan.com/omotesando-aoyama/" rel="noopener" target="_blank">Official restaurant</a><a class="btn btn-sm" href="https://www.google.com/maps/search/?api=1&amp;query=Indian+Restaurant+Mumbai+Omotesando" rel="noopener" target="_blank">Map</a></div></div></article>
+<article class="timeline-item"><div class="timeline-time">13:30<br/>–14:15</div><div class="timeline-card"><div class="timeline-head"><h3 class="timeline-title">Shibuya Station, Hachiko and Scramble Crossing</h3><input aria-label="Mark Shibuya Station complete" class="visit-check" data-check-id="d2-shibuya" type="checkbox"/></div><p class="timeline-copy">Approach from the Hachiko side, take the group photo, cross once in each direction and note the correct return entrance. Do not use this block for shopping.</p><div class="timeline-tags"><span class="tag cost">Free</span><span class="tag must">Requested highlight</span><span class="tag">45 minutes</span></div><div class="card-actions"><a class="btn btn-sm" href="https://www.google.com/maps/search/?api=1&amp;query=Hachiko+Memorial+Statue" rel="noopener" target="_blank">Map</a></div></div></article>
+<article class="timeline-item"><div class="timeline-time">14:15<br/>–15:40</div><div class="timeline-card"><div class="timeline-head"><h3 class="timeline-title">Shibuya design, gaming and character floors</h3><input aria-label="Mark Shibuya stores complete" class="visit-check" data-check-id="d2-stores" type="checkbox"/></div><p class="timeline-copy">Use Shibuya PARCO and nearby department stores for games, design, fashion and popular character merchandise. Split into pairs for 45 minutes and meet at a fixed floor and time.</p><div class="timeline-tags"><span class="tag cost">Free entry</span><span class="tag">Shopping separate</span><span class="tag">Pair system</span></div><div class="card-actions"><a class="btn btn-sm" href="https://www.google.com/maps/search/?api=1&amp;query=Shibuya+PARCO" rel="noopener" target="_blank">Map</a></div></div></article>
+<article class="timeline-item"><div class="timeline-time">15:40<br/>–16:15</div><div class="timeline-card rest"><div class="timeline-head"><h3 class="timeline-title">Mandatory seated coffee break</h3><input aria-label="Mark Shibuya coffee break complete" class="visit-check" data-check-id="d2-coffee" type="checkbox"/></div><p class="timeline-copy">Sit for at least 30 minutes. Review purchases, charge one phone if needed and decide whether the group wants the optional sky deck or more relaxed street time.</p><div class="timeline-tags"><span class="tag cost">Drink cap <span class="money-pair" data-jpy="600"></span></span><span class="tag must">Do not skip</span></div></div></article>
+<article class="timeline-item"><div class="timeline-time">16:15<br/>–17:25</div><div class="timeline-card optional"><div class="timeline-head"><h3 class="timeline-title">Choose one: Shibuya Sky or relaxed city time</h3><input aria-label="Mark optional Shibuya block complete" class="visit-check" data-check-id="d2-sky" type="checkbox"/></div><p class="timeline-copy"><b>Paid option:</b> reserve around 16:00 for winter dusk. <b>Budget option:</b> spend the same period around Center Gai, MAGNET and department-store viewpoints. Tokyo Tower remains the main paid skyline ticket.</p><div class="timeline-tags"><span class="tag cost">Optional <span class="money-pair" data-jpy="3400"></span></span><span class="tag book">Advance booking</span><span class="tag">Weather sensitive</span></div><div class="card-actions"><a class="btn btn-sm btn-yellow" href="https://www.shibuya-scramble-square.com/sky/ticket/" rel="noopener" target="_blank">Optional ticket</a><button class="btn btn-sm" data-page-target="budget" type="button">Add in budget</button></div></div></article>
+<article class="timeline-item"><div class="timeline-time">17:35<br/>–18:50</div><div class="timeline-card meal-card"><div class="timeline-head"><div><span class="meal-label">Indian dinner</span><h3 class="timeline-title">Milan Nataraj · Shibuya</h3></div><input aria-label="Mark Day 2 dinner complete" class="visit-check" data-check-id="d2-dinner" type="checkbox"/></div><p class="timeline-copy">The restaurant is a short walk from Shibuya Station and provides vegetarian, vegan, halal and Jain-compatible choices. Reserve four seats so dinner does not become a queue.</p><div class="meal-meta"><span><b>Hours</b><br/>11:30–23:00</span><span><b>Target spend</b><br/><span class="money-pair" data-jpy="2200"></span> each</span><span><b>Walk</b><br/>About 3 minutes from station</span></div><div class="card-actions"><a class="btn btn-sm btn-primary" href="https://nataraj.co.jp/en/" rel="noopener" target="_blank">Official restaurant</a><a class="btn btn-sm" href="https://www.google.com/maps/search/?api=1&amp;query=Milan+Nataraj+Shibuya" rel="noopener" target="_blank">Map</a></div></div></article>
+<article class="timeline-item"><div class="timeline-time">19:05<br/>–20:35</div><div class="timeline-card optional"><div class="timeline-head"><h3 class="timeline-title">Alternative finish: Shinjuku free observatory</h3><input aria-label="Mark Shinjuku evening complete" class="visit-check" data-check-id="d2-shinjuku" type="checkbox"/></div><p class="timeline-copy"><b>Do this only when Shibuya Sky was skipped.</b> Take the JR Yamanote Line to Shinjuku, use the free Tokyo Metropolitan Government observatory and make at most one short photo loop. If the paid Shibuya viewpoint was chosen—or anyone is tired—return to Nippori after dinner instead.</p><div class="timeline-tags"><span class="tag cost">Observatory free</span><span class="tag book">Shibuya Sky OR Shinjuku</span><span class="tag">Optional evening cut</span></div><div class="card-actions"><a class="btn btn-sm" href="https://www.english.metro.tokyo.lg.jp/w/000-101-000542" rel="noopener" target="_blank">Official observatory</a></div></div></article>
+<article class="timeline-item"><div class="timeline-time">20:45<br/>–22:30</div><div class="timeline-card sleep"><div class="timeline-head"><h3 class="timeline-title">Return to Nippori and sleep</h3><input aria-label="Mark Day 2 sleep prep complete" class="visit-check" data-check-id="d2-sleep" type="checkbox"/></div><p class="timeline-copy">Target hotel by 21:30. Prepare the museum ticket, Tower QR and route for tomorrow. Sleep 22:30–07:00.</p><div class="timeline-tags"><span class="tag">8.5 h sleep</span><span class="tag">Phones away 22:15</span></div></div></article>
+</div><aside class="day-sidebar"><div class="summary-card"><h3>Day 2 progress</h3><div class="summary-row"><span>Geographic flow</span><strong>Harajuku → Shibuya → optional Shinjuku</strong></div><div class="summary-row"><span>Viewpoint rule</span><strong>Choose only one</strong></div><div class="summary-row"><span>First fatigue cut</span><strong>Shinjuku evening</strong></div><div class="progress-track"><div class="progress-fill" data-progress-for="day2"></div></div><p class="muted" data-progress-text="day2" style="margin:9px 0 0;font-size:.78rem">0 complete</p></div><div class="alert alert-success"><div class="alert-icon">✓</div><div><strong>One-viewpoint rule</strong><p>Book Shibuya Sky only when the budget and weather justify it. Otherwise use the free Shinjuku observatory. Do not attempt both on the same evening.</p></div></div><div class="summary-card"><h3>Money guardrail</h3><div class="summary-row"><span>Meals + coffee</span><strong>~<span class="money-pair" data-jpy="5100"></span></strong></div><div class="summary-row"><span>Transit</span><strong>~<span class="money-pair" data-jpy="1200"></span></strong></div><div class="summary-row"><span>Core allowance</span><strong>~<span class="money-pair" data-jpy="6300"></span></strong></div><div class="summary-row"><span>Optional sky</span><strong>+<span class="money-pair" data-jpy="3400"></span></strong></div></div></aside></div>
+<div class="next-nav"><button class="btn" data-page-target="day1" type="button">← Day 1</button><button class="btn btn-primary" data-page-target="day3" type="button">Day 3: Museum, tower &amp; bay →</button></div>
+</section>
+<!-- DAY 3 -->
+<section class="app-page" data-page="day3" hidden>
+<div class="page-hero" style="background-image:url('https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&amp;fit=crop&amp;w=1800&amp;q=85')"><div class="page-hero-content"><span class="eyebrow">Day 03 · Timed-entry + skyline + bay</span><h1>Museum → Tokyo Tower → Waterfront</h1><p>The day begins with the requested character-story museum, then follows a clean southeast route to a South Indian lunch, Tokyo Tower and the bay. Two substantial meal breaks keep the long day manageable.</p><div class="day-meta"><span class="chip">Fri · 29 Jan</span><span class="chip">~15k–18k steps</span><span class="chip paid">~<span class="money-pair" data-jpy="10200"></span></span><span class="chip">Sleep 22:15–06:45</span></div></div></div>
+<div class="pace-strip"><div><small>Fixed booking</small><strong>Museum · 10:00</strong></div><div><small>Paid skyline</small><strong>Tokyo Tower Main Deck</strong></div><div><small>Long transit</small><strong>Used as seated recovery</strong></div><div><small>Hotel target</small><strong>About 21:20</strong></div></div>
+<div class="day-layout"><div class="timeline" data-day="day3">
+<article class="timeline-item"><div class="timeline-time">07:00<br/>–08:15</div><div class="timeline-card rest"><div class="timeline-head"><h3 class="timeline-title">Wake, breakfast and leave with ticket QR ready</h3><input aria-label="Mark Day 3 breakfast complete" class="visit-check" data-check-id="d3-breakfast" type="checkbox"/></div><p class="timeline-copy">Eat lightly, download the ticket QR to two phones and leave no later than 08:15. The ticketed entry should not depend on one phone or mobile signal.</p><div class="timeline-tags"><span class="tag cost">Breakfast <span class="money-pair" data-jpy="600"></span></span><span class="tag must">Two offline ticket copies</span></div></div></article>
+<article class="timeline-item"><div class="timeline-time">08:15<br/>–09:45</div><div class="timeline-card"><div class="timeline-head"><h3 class="timeline-title">Nippori → Noborito → museum shuttle</h3><input aria-label="Mark museum transfer complete" class="visit-check" data-check-id="d3-transfer" type="checkbox"/></div><p class="timeline-copy">Use JR to Shinjuku, Odakyu to Noborito and the paid shuttle bus. The 90-minute block includes station navigation and a safe arrival before the timed entry.</p><div class="timeline-tags"><span class="tag transit">About 75–90 min</span><span class="tag cost">~<span class="money-pair" data-jpy="900"></span></span><span class="tag">Arrive 15 min early</span></div><div class="card-actions"><a class="btn btn-sm" href="https://www.google.com/maps/dir/?api=1&amp;origin=Almont+Hotel+Nippori&amp;destination=2-8-1+Nagao+Tama-ku+Kawasaki&amp;travelmode=transit" rel="noopener" target="_blank">Live route</a></div></div></article>
+<article class="timeline-item"><div class="timeline-time">10:00<br/>–12:00</div><div class="timeline-card"><div class="timeline-head"><h3 class="timeline-title">Kawasaki story and illustration museum</h3><input aria-label="Mark museum complete" class="visit-check" data-check-id="d3-museum" type="checkbox"/></div><p class="timeline-copy">Use the full two-hour window for original artwork, studio displays, film theatre and outdoor areas. Admission is timed and should be booked in advance.</p><div class="timeline-tags"><span class="tag cost"><span class="money-pair" data-jpy="1000"></span></span><span class="tag book">Advance ticket required</span><span class="tag">No rushing through exhibits</span></div><div class="card-actions"><a class="btn btn-sm btn-primary" href="https://www.e-tix.jp/fujiko-museum/en/" rel="noopener" target="_blank">Official ticket portal</a><a class="btn btn-sm" href="https://fujiko-museum.com/english.html" rel="noopener" target="_blank">Visitor information</a></div></div></article>
+<article class="timeline-item"><div class="timeline-time">12:00<br/>–13:20</div><div class="timeline-card rest"><div class="timeline-head"><h3 class="timeline-title">Seated transfer to Kamiyacho</h3><input aria-label="Mark Kamiyacho transfer complete" class="visit-check" data-check-id="d3-kamiyacho" type="checkbox"/></div><p class="timeline-copy">Return by shuttle and rail toward central Tokyo. Treat this as recovery time: sit whenever possible, avoid shopping detours and message the restaurant only if the group is delayed.</p><div class="timeline-tags"><span class="tag transit">About 75–80 min</span><span class="tag cost">~<span class="money-pair" data-jpy="700"></span></span></div></div></article>
+<article class="timeline-item"><div class="timeline-time">13:25<br/>–14:25</div><div class="timeline-card meal-card"><div class="timeline-head"><div><span class="meal-label">Indian lunch</span><h3 class="timeline-title">Nirvanam · Kamiyacho</h3></div><input aria-label="Mark Day 3 lunch complete" class="visit-check" data-check-id="d3-lunch" type="checkbox"/></div><p class="timeline-copy">Use the South Indian lunch buffet or a set meal. The branch is minutes from Tokyo Tower, so lunch adds almost no route detour.</p><div class="meal-meta"><span><b>Lunch hours</b><br/>11:00–15:00 · L.O. 14:30</span><span><b>Target spend</b><br/><span class="money-pair" data-jpy="1500"></span> each</span><span><b>Reservation</b><br/>Lunch is generally walk-in</span></div><div class="card-actions"><a class="btn btn-sm btn-primary" href="https://www.nirvanam.jp/en" rel="noopener" target="_blank">Official restaurant</a><a class="btn btn-sm" href="https://www.google.com/maps/search/?api=1&amp;query=Nirvanam+Kamiyacho" rel="noopener" target="_blank">Map</a></div></div></article>
+<article class="timeline-item"><div class="timeline-time">14:25<br/>–14:45</div><div class="timeline-card"><div class="timeline-head"><h3 class="timeline-title">Walk through Shiba Park for tower photos</h3><input aria-label="Mark tower photo walk complete" class="visit-check" data-check-id="d3-shiba" type="checkbox"/></div><p class="timeline-copy">Use the short walk for outdoor photographs before entering. Keep the group moving; there is no need to add another temple interior.</p><div class="timeline-tags"><span class="tag cost">Free</span><span class="tag">20 minutes</span></div></div></article>
+<article class="timeline-item"><div class="timeline-time">14:45<br/>–16:15</div><div class="timeline-card"><div class="timeline-head"><h3 class="timeline-title">Tokyo Tower Main Deck</h3><input aria-label="Mark Tokyo Tower complete" class="visit-check" data-check-id="d3-tower" type="checkbox"/></div><p class="timeline-copy">Book the standard 150 m Main Deck. Ninety minutes is enough for the indoor panorama, glass floor, photographs and gift area without paying for the premium top-deck tour.</p><div class="timeline-tags"><span class="tag cost"><span class="money-pair" data-jpy="1500"></span></span><span class="tag book">Online QR recommended</span><span class="tag must">Requested highlight</span></div><div class="card-actions"><a class="btn btn-sm btn-primary" href="https://ticket.tokyotower.co.jp/en/" rel="noopener" target="_blank">Official ticket</a><a class="btn btn-sm" href="https://www.google.com/maps/search/?api=1&amp;query=Tokyo+Tower" rel="noopener" target="_blank">Map</a></div></div></article>
+<article class="timeline-item"><div class="timeline-time">16:15<br/>–17:10</div><div class="timeline-card rest"><div class="timeline-head"><h3 class="timeline-title">Transit to Odaiba waterfront</h3><input aria-label="Mark Odaiba transfer complete" class="visit-check" data-check-id="d3-odaiba-transit" type="checkbox"/></div><p class="timeline-copy">Use metro and the Yurikamome. Sit, hydrate and let the outdoor waterfront block begin only after everyone is comfortable.</p><div class="timeline-tags"><span class="tag transit">About 45–55 min</span><span class="tag cost">~<span class="money-pair" data-jpy="600"></span></span></div></div></article>
+<article class="timeline-item"><div class="timeline-time">17:10<br/>–18:35</div><div class="timeline-card"><div class="timeline-head"><h3 class="timeline-title">Odaiba waterfront, bridge views and entertainment floors</h3><input aria-label="Mark Odaiba complete" class="visit-check" data-check-id="d3-odaiba" type="checkbox"/></div><p class="timeline-copy">See the waterfront lights, Rainbow Bridge viewpoint, the large robot display and indoor entertainment/shopping floors. This is a free-roaming block; each pair may choose different stores.</p><div class="timeline-tags"><span class="tag cost">Free core</span><span class="tag">Indoor backup for cold weather</span><span class="tag">Shopping separate</span></div></div></article>
+<article class="timeline-item"><div class="timeline-time">18:45<br/>–20:00</div><div class="timeline-card meal-card"><div class="timeline-head"><div><span class="meal-label">Indian dinner</span><h3 class="timeline-title">Nirvanam · Ariake / Tokyo Big Sight area</h3></div><input aria-label="Mark Day 3 dinner complete" class="visit-check" data-check-id="d3-dinner" type="checkbox"/></div><p class="timeline-copy">Take the short bay-area rail connection and sit for a full dinner. Reserve for four because this is the end of a long day and waiting is not part of the plan.</p><div class="meal-meta"><span><b>Dinner hours</b><br/>About 17:00/17:30–22:00</span><span><b>Target spend</b><br/><span class="money-pair" data-jpy="2500"></span> each</span><span><b>Return</b><br/>Ariake → Nippori about 50–65 min</span></div><div class="card-actions"><a class="btn btn-sm btn-primary" href="https://www.nirvanam.jp/en" rel="noopener" target="_blank">Official branches</a><a class="btn btn-sm" href="https://www.google.com/maps/search/?api=1&amp;query=Nirvanam+Ariake" rel="noopener" target="_blank">Map</a></div></div></article>
+<article class="timeline-item"><div class="timeline-time">20:10<br/>–22:15</div><div class="timeline-card sleep"><div class="timeline-head"><h3 class="timeline-title">Return, hot bath and sleep</h3><input aria-label="Mark Day 3 sleep prep complete" class="visit-check" data-check-id="d3-sleep" type="checkbox"/></div><p class="timeline-copy">Target the hotel near 21:20. Prepare Shinkansen tickets and light day bags. Sleep 22:15–06:45 = 8.5 hours.</p><div class="timeline-tags"><span class="tag">8.5 h sleep</span><span class="tag">No shopping stop on return</span></div></div></article>
+</div><aside class="day-sidebar"><div class="summary-card"><h3>Day 3 progress</h3><div class="summary-row"><span>Fixed entry</span><strong>10:00 museum</strong></div><div class="summary-row"><span>Core skyline</span><strong>Tokyo Tower</strong></div><div class="summary-row"><span>First cut</span><strong>Shorten Odaiba stores</strong></div><div class="progress-track"><div class="progress-fill" data-progress-for="day3"></div></div><p class="muted" data-progress-text="day3" style="margin:9px 0 0;font-size:.78rem">0 complete</p></div><div class="alert alert-danger"><div class="alert-icon">🎟️</div><div><strong>Do not improvise the museum time</strong><p>Keep the 10:00 ticket, arrive early and remove later shopping time if the morning transfer runs late.</p></div></div><div class="summary-card"><h3>Money guardrail</h3><div class="summary-row"><span>Tickets</span><strong><span class="money-pair" data-jpy="2500"></span></strong></div><div class="summary-row"><span>Meals</span><strong>~<span class="money-pair" data-jpy="4600"></span></strong></div><div class="summary-row"><span>Transport + breakfast</span><strong>~<span class="money-pair" data-jpy="3100"></span></strong></div><div class="summary-row"><span>Day allowance</span><strong>~<span class="money-pair" data-jpy="10200"></span></strong></div></div></aside></div>
+<div class="next-nav"><button class="btn" data-page-target="day2" type="button">← Day 2</button><button class="btn btn-primary" data-page-target="day4" type="button">Day 4: Bullet train &amp; old Tokyo →</button></div>
+</section>
+<!-- DAY 4 -->
+<section class="app-page" data-page="day4" hidden>
+<div class="page-hero" style="background-image:url('https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&amp;fit=crop&amp;w=1800&amp;q=85')"><div class="page-hero-content"><span class="eyebrow">Day 04 · Rail experience + heritage</span><h1>Shinkansen → Odawara → Asakusa</h1><p>The final sightseeing day delivers the bullet-train experience, a manageable castle visit, Indian lunch near Odawara Station, Tokyo Station shopping and Senso-ji before a very early dinner and 20:15 sleep.</p><div class="day-meta"><span class="chip">Sat · 30 Jan</span><span class="chip">~14k–17k steps</span><span class="chip paid">~<span class="money-pair" data-jpy="13000"></span></span><span class="chip must" id="day4SleepChip">Sleep 20:15–04:45</span></div></div></div>
+<div class="pace-strip"><div><small>Target train</small><strong>08:27 Tokyo → Odawara</strong></div><div><small>Return target</small><strong>13:14 Odawara → Tokyo</strong></div><div><small>Main-hall deadline</small><strong>Senso-ji before 17:00</strong></div><div><small>Packing</small><strong>Complete by bedtime</strong></div></div>
+<div class="day-layout"><div class="timeline" data-day="day4">
+<article class="timeline-item"><div class="timeline-time">06:45<br/>–07:45</div><div class="timeline-card rest"><div class="timeline-head"><h3 class="timeline-title">Wake, breakfast, day bag and Tokyo Station</h3><input aria-label="Mark Day 4 departure complete" class="visit-check" data-check-id="d4-start" type="checkbox"/></div><p class="timeline-copy">Take only a small day bag. Carry passports or ID used for booking, offline SmartEX details and one power bank. Leave the hotel by 07:45.</p><div class="timeline-tags"><span class="tag cost">Breakfast <span class="money-pair" data-jpy="600"></span></span><span class="tag must">No hotel-room delay</span></div></div></article>
+<article class="timeline-item"><div class="timeline-time">08:27<br/>–09:00</div><div class="timeline-card"><div class="timeline-head"><h3 class="timeline-title">Tokaido Shinkansen: Tokyo → Odawara</h3><input aria-label="Mark outbound bullet train complete" class="visit-check" data-check-id="d4-shinkansen-out" type="checkbox"/></div><p class="timeline-copy">Choose a Kodama or a Hikari that explicitly stops at Odawara. Reserve four adjacent seats if the price difference is acceptable. The time shown is a planning target and must be reconfirmed against the January 2027 timetable.</p><div class="timeline-tags"><span class="tag transit">About 33 min</span><span class="tag cost">From <span class="money-pair" data-jpy="3280"></span></span><span class="tag book">Confirm one month ahead</span></div><div class="card-actions"><a class="btn btn-sm btn-primary" href="https://smart-ex.jp/en/" rel="noopener" target="_blank">SmartEX</a><a class="btn btn-sm" href="https://global.jr-central.co.jp/en/info/timetable/" rel="noopener" target="_blank">Official timetable</a></div></div></article>
+<article class="timeline-item"><div class="timeline-time">09:00<br/>–09:25</div><div class="timeline-card"><div class="timeline-head"><h3 class="timeline-title">Station orientation and walk to Odawara Castle</h3><input aria-label="Mark Odawara walk complete" class="visit-check" data-check-id="d4-walk" type="checkbox"/></div><p class="timeline-copy">Use the East Exit, take a restroom break and walk about 10–15 minutes. Do not add station shopping yet.</p><div class="timeline-tags"><span class="tag transit">Comfortable 25-min buffer</span><span class="tag cost">Free</span></div></div></article>
+<article class="timeline-item"><div class="timeline-time">09:25<br/>–11:10</div><div class="timeline-card"><div class="timeline-head"><h3 class="timeline-title">Odawara Castle keep and SAMURAI Museum</h3><input aria-label="Mark Odawara Castle complete" class="visit-check" data-check-id="d4-castle" type="checkbox"/></div><p class="timeline-copy">Visit the keep first and the museum second. Leave by 11:10; this still gives a generous visit while preserving a 20–25 minute walk and restroom buffer before lunch.</p><div class="timeline-tags"><span class="tag cost"><span class="money-pair" data-jpy="1000"></span></span><span class="tag">09:00–17:00 working hours</span><span class="tag">History focus</span></div><div class="card-actions"><a class="btn btn-sm" href="https://odawaracastle.com/info/" rel="noopener" target="_blank">Official information</a><a class="btn btn-sm" href="https://www.google.com/maps/search/?api=1&amp;query=Odawara+Castle" rel="noopener" target="_blank">Map</a></div></div></article>
+<article class="timeline-item"><div class="timeline-time">11:35<br/>–12:40</div><div class="timeline-card meal-card"><div class="timeline-head"><div><span class="meal-label">Indian lunch</span><h3 class="timeline-title">Indian Restaurant Shakti · Odawara</h3></div><input aria-label="Mark Odawara lunch complete" class="visit-check" data-check-id="d4-lunch" type="checkbox"/></div><p class="timeline-copy">Leave the castle area by 11:10, walk back toward the station and take a full seated lunch. The restaurant is about five minutes from Odawara Station, leaving more than 30 minutes for payment, a restroom stop and the correct Shinkansen platform.</p><div class="meal-meta"><span><b>Lunch hours</b><br/>From 11:00</span><span><b>Target spend</b><br/><span class="money-pair" data-jpy="1800"></span> each</span><span><b>Leave table</b><br/>No later than 12:40</span></div><div class="card-actions"><a class="btn btn-sm btn-primary" href="https://www.tripadvisor.in/Restaurant_Review-g1021278-d4601247-Reviews-Indian_Restaurant_Shakti-Odawara_Kanagawa_Prefecture_Kanto.html" rel="noopener" target="_blank">Restaurant details</a><a class="btn btn-sm" href="https://www.google.com/maps/search/?api=1&amp;query=Indian+Restaurant+Shakti+Odawara" rel="noopener" target="_blank">Map</a></div></div></article>
+<article class="timeline-item"><div class="timeline-time">13:14<br/>–13:50</div><div class="timeline-card"><div class="timeline-head"><h3 class="timeline-title">Shinkansen: Odawara → Tokyo</h3><input aria-label="Mark return bullet train complete" class="visit-check" data-check-id="d4-shinkansen-back" type="checkbox"/></div><p class="timeline-copy">Use a Kodama or stopping Hikari. Recheck the final service and platform the evening before; the target time is not a booking confirmation.</p><div class="timeline-tags"><span class="tag transit">About 33–36 min</span><span class="tag cost">From <span class="money-pair" data-jpy="3280"></span></span></div></div></article>
+<article class="timeline-item"><div class="timeline-time">14:00<br/>–14:20</div><div class="timeline-card"><div class="timeline-head"><h3 class="timeline-title">Tokyo Station Marunouchi façade photo</h3><input aria-label="Mark Tokyo Station photo complete" class="visit-check" data-check-id="d4-tokyo-station" type="checkbox"/></div><p class="timeline-copy">Use one short exterior photo stop. Do not walk to the Imperial Palace today; the temple closing time is more important.</p><div class="timeline-tags"><span class="tag cost">Free</span><span class="tag">20-minute cap</span></div></div></article>
+<article class="timeline-item"><div class="timeline-time">14:20<br/>–15:05</div><div class="timeline-card"><div class="timeline-head"><h3 class="timeline-title">Tokyo Character Street and station shopping</h3><input aria-label="Mark Tokyo Station shops complete" class="visit-check" data-check-id="d4-character" type="checkbox"/></div><p class="timeline-copy">Browse the B1 character, broadcast, game and stationery shops. Split into pairs for 30 minutes and meet at the same marked entrance; the Asakusa transfer buffer is more important than one extra shop.</p><div class="timeline-tags"><span class="tag cost">Free entry</span><span class="tag">10:00–20:30 general hours</span><span class="tag">Shopping separate</span></div><div class="card-actions"><a class="btn btn-sm" href="https://www.tokyoeki-1bangai.co.jp/en/?area=area2&amp;floor=b1f" rel="noopener" target="_blank">Official directory</a></div></div></article>
+<article class="timeline-item"><div class="timeline-time">15:05<br/>–15:45</div><div class="timeline-card rest"><div class="timeline-head"><h3 class="timeline-title">Tokyo Station → Asakusa</h3><input aria-label="Mark Asakusa transfer complete" class="visit-check" data-check-id="d4-asakusa-transit" type="checkbox"/></div><p class="timeline-copy">Use the fastest live route and allow a full 40 minutes for Tokyo Station corridors, the transfer and Asakusa exit navigation. The goal is to reach the temple grounds around 15:45 without sprinting.</p><div class="timeline-tags"><span class="tag transit">40-min door-to-door allowance</span><span class="tag cost">~<span class="money-pair" data-jpy="220"></span></span></div></div></article>
+<article class="timeline-item"><div class="timeline-time">15:45<br/>–16:50</div><div class="timeline-card"><div class="timeline-head"><h3 class="timeline-title">Kaminarimon, Nakamise and Senso-ji</h3><input aria-label="Mark Senso-ji complete" class="visit-check" data-check-id="d4-sensoji" type="checkbox"/></div><p class="timeline-copy">Walk the classic gate-to-main-hall route. Go to the main hall first, then use the remaining time for Nakamise. Leave by 16:50 so dinner transport is calm rather than a race against restaurant service.</p><div class="timeline-tags"><span class="tag cost">Free</span><span class="tag must">Main hall first</span><span class="tag">Winter closing 17:00</span></div><div class="card-actions"><a class="btn btn-sm" href="https://www.senso-ji.jp/english/" rel="noopener" target="_blank">Official</a><a class="btn btn-sm" href="https://www.google.com/maps/search/?api=1&amp;query=Senso-ji" rel="noopener" target="_blank">Map</a></div></div></article>
+<article class="timeline-item"><div class="timeline-time">17:25<br/>–18:30</div><div class="timeline-card meal-card"><div class="timeline-head"><div><span class="meal-label">Early Indian dinner</span><h3 class="timeline-title">Vege Herb Saga · Okachimachi</h3></div><input aria-label="Mark final dinner complete" class="visit-check" data-check-id="d4-dinner" type="checkbox"/></div><p class="timeline-copy">Leave Asakusa at 16:50 and take the Ginza Line toward Ueno-Hirokoji/Okachimachi. The 35-minute allowance covers the train, station exit and walk. Keep the table to 65 minutes because packing and sleep cannot move later.</p><div class="meal-meta"><span><b>Dinner service</b><br/>From about 17:15</span><span><b>Target spend</b><br/><span class="money-pair" data-jpy="2200"></span> each</span><span><b>Leave</b><br/>By 18:30</span></div><div class="card-actions"><a class="btn btn-sm btn-primary" href="https://vegeherbsaga.com/" rel="noopener" target="_blank">Official restaurant</a></div></div></article>
+<article class="timeline-item"><div class="timeline-time">18:45<br/>–20:15</div><div class="timeline-card sleep"><div class="timeline-head"><h3 class="timeline-title">Hotel, full packing, bath and airport sleep</h3><input aria-label="Mark final packing complete" class="visit-check" data-check-id="d4-pack" type="checkbox"/></div><p class="timeline-copy">Target hotel by 18:50. Pack completely, place passports and boarding documents in one pouch, check terminal and set two alarms. <span id="day4SleepText">Sleep 20:15–04:45 = 8.5 hours.</span></p><div class="timeline-tags"><span class="tag must">Airport code and terminal check</span><span class="tag">No repacking in the morning</span><span class="tag">8.5 h sleep</span></div></div></article>
+</div><aside class="day-sidebar"><div class="summary-card"><h3>Day 4 progress</h3><div class="summary-row"><span>Bullet train</span><strong>Both directions</strong></div><div class="summary-row"><span>Temple deadline</span><strong>17:00</strong></div><div class="summary-row"><span>Hotel target</span><strong>18:50</strong></div><div class="progress-track"><div class="progress-fill" data-progress-for="day4"></div></div><p class="muted" data-progress-text="day4" style="margin:9px 0 0;font-size:.78rem">0 complete</p></div><div class="alert alert-danger"><div class="alert-icon">🚅</div><div><strong>Choose a train that stops at Odawara</strong><p>Do not assume every Shinkansen stops there. Confirm Kodama or an eligible Hikari in SmartEX.</p></div></div><div class="summary-card"><h3>Money guardrail</h3><div class="summary-row"><span>Shinkansen return</span><strong><span class="money-pair" data-jpy="6560"></span></strong></div><div class="summary-row"><span>Castle</span><strong><span class="money-pair" data-jpy="1000"></span></strong></div><div class="summary-row"><span>Meals + city rail</span><strong>~<span class="money-pair" data-jpy="5440"></span></strong></div><div class="summary-row"><span>Day allowance</span><strong>~<span class="money-pair" data-jpy="13000"></span></strong></div></div></aside></div>
+<div class="next-nav"><button class="btn" data-page-target="day3" type="button">← Day 3</button><button class="btn btn-primary" data-page-target="day5" type="button">Departure morning →</button></div>
+</section>
+<!-- DAY 5 -->
+<section class="app-page" data-page="day5" hidden>
+<div class="page-hero" style="background-image:url('https://images.unsplash.com/photo-1480796927426-f609979314bd?auto=format&amp;fit=crop&amp;w=1800&amp;q=85')"><div class="page-hero-content"><span class="eyebrow">Departure day · airport only</span><h1 id="day5Title">Early Narita Departure</h1><p id="day5Lead">Use the first practical Skyliner from Nippori and target Narita around 06:25 for the shown 08:55 international flight. Revalidate the 2027 timetable and airline deadline before travel.</p><div class="day-meta"><span class="chip">Sun · 31 Jan</span><span class="chip must">Flight shown 08:55</span><span class="chip paid" id="day5CostChip">~<span class="money-pair" data-jpy="3000"></span></span><span class="chip" id="day5WakeChip">Wake 04:45</span></div></div></div>
+<div class="journey-board"><div class="journey-step"><time id="depWake">04:45</time><b>Wake</b><small>Room sweep and dress</small></div><div class="journey-step"><time id="depLeave">05:05</time><b>Leave hotel</b><small>Breakfast already packed</small></div><div class="journey-step"><time id="depStation">05:20</time><b>Station</b><small>Ticket and platform buffer</small></div><div class="journey-step"><time id="depTrain">05:45</time><b>Target train</b><small id="depTrainLabel">First practical Skyliner</small></div><div class="journey-step"><time id="depAirport">06:25</time><b>Airport</b><small>Check-in and bag drop</small></div></div>
+<div class="day-layout"><div class="timeline" data-day="day5">
+<article class="timeline-item"><div class="timeline-time" id="d5WakeRange">04:45<br/>–05:05</div><div class="timeline-card sleep"><div class="timeline-head"><h3 class="timeline-title">Wake, final room sweep and checkout</h3><input aria-label="Mark checkout complete" class="visit-check" data-check-id="d5-checkout" type="checkbox"/></div><p class="timeline-copy">Check the safe, chargers, under beds and bathroom. Carry breakfast and water; do not stop after checkout.</p><div class="timeline-tags"><span class="tag must">Passports in hand</span><span class="tag">Rooms fully packed last night</span></div></div></article>
+<article class="timeline-item"><div class="timeline-time" id="d5WalkRange">05:05<br/>–05:20</div><div class="timeline-card"><div class="timeline-head"><h3 class="timeline-title">Walk to Nippori Station with lift buffer</h3><input aria-label="Mark station walk complete" class="visit-check" data-check-id="d5-walk" type="checkbox"/></div><p class="timeline-copy">Allow more than the normal five-minute walk because of luggage, lifts and finding the correct railway entrance.</p><div class="timeline-tags"><span class="tag transit">Group stays together</span><span class="tag">No convenience-store stop</span></div></div></article>
+<article class="timeline-item"><div class="timeline-time" id="d5TrainRange">05:45<br/>–06:25</div><div class="timeline-card"><div class="timeline-head"><h3 class="timeline-title" id="d5TrainTitle">Nippori → Narita Airport</h3><input aria-label="Mark airport train complete" class="visit-check" data-check-id="d5-train" type="checkbox"/></div><p class="timeline-copy" id="d5TrainCopy">Use the first practical weekend Skyliner. Current schedules show an early service, but January 2027 times must be checked again one week before travel.</p><div class="timeline-tags"><span class="tag cost" id="d5TrainCost"><span class="money-pair" data-jpy="2470"></span></span><span class="tag book">Ticket ready offline</span><span class="tag must">Terminal confirmed</span></div><div class="card-actions"><a class="btn btn-sm btn-primary" id="departureRouteLink" href="https://www.keisei.co.jp/keisei/tetudou/skyliner/us/" rel="noopener" target="_blank">Official airport rail</a></div></div></article>
+<article class="timeline-item"><div class="timeline-time" id="d5AirportRange">06:25<br/>–08:10</div><div class="timeline-card"><div class="timeline-head"><h3 class="timeline-title">Check-in, bag drop, security and immigration</h3><input aria-label="Mark airport processing complete" class="visit-check" data-check-id="d5-airport" type="checkbox"/></div><p class="timeline-copy">Go directly to the operating carrier’s counter, not just the marketing airline name shown on the booking page. Complete security and immigration before browsing airport shops.</p><div class="timeline-tags"><span class="tag must">Operating carrier desk</span><span class="tag">Gate target 08:10</span><span class="tag cost">Breakfast <span class="money-pair" data-jpy="500"></span></span></div></div></article>
+<article class="timeline-item"><div class="timeline-time">08:10<br/>–08:55</div><div class="timeline-card"><div class="timeline-head"><h3 class="timeline-title">At gate and board</h3><input aria-label="Mark boarding complete" class="visit-check" data-check-id="d5-board" type="checkbox"/></div><p class="timeline-copy">All four travellers remain at the gate. Refill water only when boarding status is stable and never leave passports charging unattended.</p><div class="timeline-tags"><span class="tag must">Flight 08:55</span><span class="tag">No last-minute shopping</span></div></div></article>
+</div><aside class="day-sidebar"><div class="summary-card"><h3>Departure status</h3><div class="summary-row"><span>Planning airport</span><strong id="day5SidebarAirport">Narita</strong></div><div class="summary-row"><span>Airport target</span><strong id="day5SidebarArrival">06:25</strong></div><div class="summary-row"><span>Flight</span><strong>08:55</strong></div><div class="progress-track"><div class="progress-fill" data-progress-for="day5"></div></div><p class="muted" data-progress-text="day5" style="margin:9px 0 0;font-size:.78rem">0 complete</p></div><div class="alert alert-danger"><div class="alert-icon">!</div><div><strong>Airport selection is not proof</strong><p>Match the final e-ticket. If it names a different airport or terminal, update the Overview setup immediately.</p></div></div><div class="summary-card"><h3>Carry-on breakfast</h3><div class="summary-row"><span>Buy by</span><strong>30 Jan · before 19:00</strong></div><div class="summary-row"><span>Choose</span><strong>Fruit, sandwich, water</strong></div><div class="summary-row"><span>Avoid</span><strong>Messy or strong-smelling food</strong></div></div></aside></div>
+<div class="next-nav"><button class="btn" data-page-target="day4" type="button">← Day 4</button><button class="btn btn-primary" data-page-target="bookings" type="button">Review bookings →</button></div>
+</section>
+<!-- BOOKINGS -->
+<section class="app-page" data-page="bookings" hidden>
+<div class="page-hero" style="background-image:url('https://images.unsplash.com/photo-1503899036084-c55cdd92da26?auto=format&amp;fit=crop&amp;w=1800&amp;q=85')"><div class="page-hero-content"><span class="eyebrow">Booking control</span><h1>Booking Calendar</h1><p>Complete the items in this order. Japan Standard Time is 3 hours 30 minutes ahead of India. Recheck prices, closures and 2027 timetables before payment.</p><div class="day-meta"><span class="chip must">Time-sensitive</span><span class="chip">Updated 31 Oct 2026</span><span class="chip">Restaurant hours can change</span></div></div></div>
+<section class="section"><div class="booking-grid">
+<article class="booking-card urgent"><span class="deadline">BOOK / VERIFY NOW</span><h3>Almont Hotel Nippori — two Twin rooms</h3><p>Search 27–31 Jan 2027 for four adults and two rooms. Confirm four separate beds, taxes, free-cancellation terms, breakfast inclusion and the final total.</p><p class="price">Screenshot starting price: <span class="money-pair" data-inr="8947"></span> per room/night</p><a class="btn btn-sm btn-primary" href="https://global.hokke.co.jp/almont-nippori/en/" rel="noopener" target="_blank">Official hotel</a></article>
+<article class="booking-card urgent"><span class="deadline">MISSING FROM SCREENSHOTS</span><h3>India → Tokyo flight</h3><p>Enter the flight number, landing airport, landing time, baggage and fare. A morning arrival gives the full light Day 1; a later arrival automatically removes sightseeing.</p><p class="price">Calculator entry: <span id="bookingInboundFare">Not entered</span></p><button class="btn btn-sm" data-page-target="overview" type="button">Update airport setup</button></article>
+<article class="booking-card urgent"><span class="deadline">VERIFY THE E-TICKET</span><h3>Tokyo → Kolkata · 31 Jan · 08:55</h3><p>The screenshot shows 08:55–23:50, one stop and 18 h 25 m. Confirm airport, terminal, operating carrier, baggage, transfer airport and check-in deadline.</p><p class="price">Shown fare: <span class="money-pair" data-inr="38223"></span> per person</p><a class="btn btn-sm" href="https://www.easemytrip.com/flights.html" rel="noopener" target="_blank">Flight search</a></article>
+<article class="booking-card"><span class="deadline">ABOUT 30 DAYS AHEAD</span><h3>Airport rail</h3><p>For Narita, use Keisei Skyliner and reconfirm the first Sunday service. For Haneda, use Tokyo Monorail plus JR Yamanote. Save tickets and route screenshots offline.</p><p class="price">NRT working fare <span class="money-pair" data-jpy="2470"></span> each way · HND working fare <span class="money-pair" data-jpy="730"></span></p><a class="btn btn-sm btn-primary" href="https://www.keisei.co.jp/keisei/tetudou/skyliner/us/" rel="noopener" target="_blank">Narita rail</a></article>
+<article class="booking-card"><span class="deadline">ADVANCE TIMED TICKET</span><h3>Kawasaki story museum · 29 Jan · 10:00</h3><p>Reserve all four admissions in one order, save the live link and screenshots to two phones, and arrive before the booked time.</p><p class="price"><span class="money-pair" data-jpy="1000"></span> per adult</p><a class="btn btn-sm btn-primary" href="https://www.e-tix.jp/fujiko-museum/en/" rel="noopener" target="_blank">Official ticket portal</a></article>
+<article class="booking-card"><span class="deadline">BOOK AFTER FLIGHTS</span><h3>Tokyo Tower Main Deck · 29 Jan · about 14:45</h3><p>Use the standard 150 m Main Deck. The premium deck is unnecessary for this budget and schedule.</p><p class="price"><span class="money-pair" data-jpy="1500"></span> per adult</p><a class="btn btn-sm btn-primary" href="https://ticket.tokyotower.co.jp/en/" rel="noopener" target="_blank">Official ticket</a></article>
+<article class="booking-card"><span class="deadline">CONFIRM ONE MONTH AHEAD</span><h3>Tokyo ⇄ Odawara Shinkansen</h3><p>Target 08:27 outbound and 13:14 return only after the January 2027 timetable appears. Select Kodama or a Hikari that explicitly stops at Odawara.</p><p class="price">Working non-reserved fare <span class="money-pair" data-jpy="3280"></span> each way</p><a class="btn btn-sm btn-primary" href="https://smart-ex.jp/en/" rel="noopener" target="_blank">SmartEX</a></article>
+<article class="booking-card restaurant"><span class="deadline">RESERVE 7–14 DAYS AHEAD</span><h3>Indian dinner tables for four</h3><p>Prioritise reservations at the Shibuya dinner and the bay-area dinner. Reconfirm opening hours for Samrat Kitchen, Vege Herb Saga, Mumbai, Nataraj, Nirvanam and the Odawara restaurant 72 hours before visiting.</p><p class="price">Meal allowance: roughly <span class="money-pair" data-jpy="1500"></span>–<span class="money-pair" data-jpy="2500"></span> per person</p><a class="btn btn-sm" href="https://nataraj.co.jp/en/" rel="noopener" target="_blank">Shibuya restaurant</a></article>
+<article class="booking-card"><span class="deadline">OPTIONAL · ONLY IF BUDGET ALLOWS</span><h3>Shibuya Sky · 28 Jan · around 16:00</h3><p>Tokyo Tower and the free Shinjuku observatory already provide skyline views. Add this only after the inbound flight and Twin-room total are entered.</p><p class="price">Optional <span class="money-pair" data-jpy="3400"></span></p><a class="btn btn-sm btn-yellow" href="https://www.shibuya-scramble-square.com/sky/ticket/" rel="noopener" target="_blank">Official ticket</a></article>
+</div></section>
+<section class="section"><div class="alert alert-success"><div class="alert-icon">✓</div><div><strong>No pass is required for this short itinerary</strong><p>Use an IC card for ordinary JR, metro, bus and monorail rides; buy the airport rail and Shinkansen separately. A nationwide JR Pass is not economical for one Tokyo–Odawara round trip.</p></div></div></section>
+<div class="next-nav"><button class="btn" data-page-target="day5" type="button">← Flight page</button><button class="btn btn-primary" data-page-target="budget" type="button">Check live budget →</button></div>
+</section>
+<!-- BUDGET -->
+<section class="app-page" data-page="budget" hidden>
+<div class="page-hero" style="background-image:url('https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&amp;fit=crop&amp;w=1800&amp;q=85')"><div class="page-hero-content"><span class="eyebrow">Budget truth check</span><h1>Live Budget Calculator</h1><p>Edit the actual inbound flight, Twin-room rate and shopping. Airport transfer cost is added automatically from the airport selections saved on Overview.</p><div class="day-meta"><span class="chip no-auto-fx" id="budgetFxChip">Saved FX: ¥1 = ₹0.6000</span><span class="chip">Indian lunch + dinner included</span><span class="chip must">Inbound flight starts at ₹0</span></div></div></div>
+<section class="section"><div class="budget-layout">
+<form class="budget-form no-auto-fx" id="budgetForm"><h2 class="panel-title">✍️ Enter actual costs</h2><div class="input-grid">
+<div class="field"><label for="budgetPP">Budget per person (₹)</label><input id="budgetPP" min="0" step="500" type="number" value="85000"/></div><div class="field"><label for="travellers">Travellers</label><input id="travellers" max="20" min="1" step="1" type="number" value="4"/></div>
+<div class="field"><label for="returnFlight">Tokyo → Kolkata / person (₹)</label><input id="returnFlight" min="0" step="100" type="number" value="38223"/></div><div class="field"><label for="inboundFlight">India → Tokyo / person (₹)</label><input id="inboundFlight" min="0" step="100" type="number" value="0"/></div>
+<div class="field"><label for="hotelNight">Almont Twin room / night (₹)</label><input id="hotelNight" min="0" step="100" type="number" value="8947"/></div><div class="field"><label for="rooms">Rooms</label><input id="rooms" max="10" min="1" step="1" type="number" value="2"/></div>
+<div class="field"><label for="nights">Nights</label><input id="nights" max="30" min="1" step="1" type="number" value="4"/></div><div class="field"><label for="hotelBuffer">Tax / price reserve (%)</label><input id="hotelBuffer" max="50" min="0" step="1" type="number" value="5"/></div>
+<div class="field"><label for="yenRate">INR for ¥1</label><input id="yenRate" max="5" min="0.01" step="0.0001" type="number" value="0.6000"/></div><div class="field"><label for="shoppingINR">Shopping / person (₹)</label><input id="shoppingINR" min="0" step="500" type="number" value="0"/></div>
+<div class="field"><label for="esimINR">eSIM / person (₹)</label><input id="esimINR" min="0" step="100" type="number" value="800"/></div><div class="field"><label for="groundJPY">City meals, local transit, tickets + contingency (¥)</label><input id="groundJPY" min="0" step="100" type="number" value="36000"/></div>
+<div class="field full"><div class="toggle-line"><span><b>Add optional Shibuya Sky</b><br/><small class="muted">Adds <span class="money-pair" data-jpy="3400"></span> per person</small></span><input aria-label="Add Shibuya Sky" id="skyToggle" type="checkbox"/></div></div>
+<div class="field full"><div class="toggle-line"><span><b>Add one hotel breakfast buffet</b><br/><small class="muted">Working allowance <span class="money-pair" data-jpy="2200"></span> per person</small></span><input aria-label="Add hotel breakfast" id="breakfastToggle" type="checkbox"/></div></div>
+</div><p class="muted" style="font-size:.78rem;line-height:1.55;margin:16px 0 0">The default <span class="money-pair" data-jpy="36000"></span> covers all planned Indian lunches and dinners, ordinary city transport, museum, Tokyo Tower, Odawara Castle, Shinkansen, breakfasts and a small contingency. Airport transfers are added separately from Overview.</p></form>
+<div aria-live="polite" class="budget-result"><div class="budget-score"><div><small>Estimated total per person</small><div class="budget-total" id="totalPP">₹0</div><div class="budget-equivalent" id="totalJPY">≈ ¥0</div></div><div class="status-badge" id="budgetStatus">CALCULATING</div></div><div class="budget-meter"><div id="budgetMeter"></div></div><div class="breakdown"><div class="breakdown-row"><span>Tokyo → Kolkata shown</span><strong id="outReturn">₹0</strong></div><div class="breakdown-row"><span>India → Tokyo</span><strong id="outInbound">₹0</strong></div><div class="breakdown-row"><span>Hotel / person</span><strong id="outHotel">₹0</strong></div><div class="breakdown-row"><span>Airport transfers</span><strong id="outAirport">₹0</strong></div><div class="breakdown-row"><span>Meals, city transport &amp; tickets</span><strong id="outGround">₹0</strong></div><div class="breakdown-row"><span>eSIM + shopping</span><strong id="outExtras">₹0</strong></div><div class="breakdown-row total"><span>Total per person</span><strong id="outTotal">₹0</strong></div></div><div class="budget-callout"><div class="budget-mini"><small>Remaining / person</small><strong id="remainingPP">₹0</strong></div><div class="budget-mini"><small>Group total</small><strong id="groupTotal">₹0</strong></div><div class="budget-mini"><small>Max hotel rate</small><strong id="maxHotel">₹0</strong></div></div><div class="alert alert-danger" id="inboundWarning" style="margin-top:18px"><div class="alert-icon">⚠️</div><div><strong>Inbound flight is still ₹0</strong><p>The displayed total is not a complete India round trip. At the current known costs, an ₹85,000 all-in ceiling is unlikely unless the inbound flight is already paid or excluded.</p></div></div></div>
+</div></section>
+<section class="section"><div class="section-head"><div><div class="section-kicker">One selected hotel</div><h2 class="section-title">Live Almont scenario</h2><p class="section-subtitle">No second hotel is included anywhere in this website.</p></div></div><div class="hotel-grid single"><div class="feature-panel scenario-panel"><h3 class="panel-title">Per-person cost stack</h3><div class="summary-row"><span>Return flight</span><strong id="scenarioReturn">—</strong></div><div class="summary-row"><span>Inbound flight</span><strong id="scenarioInbound">—</strong></div><div class="summary-row"><span>Hotel + reserve</span><strong id="scenarioHotel">—</strong></div><div class="summary-row"><span>Ground plan + airport + extras</span><strong id="scenarioGround">—</strong></div><div class="summary-row"><span>Total</span><strong id="scenarioTotal">—</strong></div><p class="muted" id="scenarioNote" style="margin-top:12px;font-size:.82rem">Calculating…</p></div><div class="feature-panel"><h3 class="panel-title">How to protect the budget</h3><ul class="pros"><li>Enter the real India→Tokyo airfare before booking optional activities.</li><li>Keep Shibuya Sky off unless the completed total stays below ₹85,000.</li><li>Set a separate shopping limit; merchandise is not in the core plan.</li><li>Use meal sets and lunch buffets rather than large à-la-carte orders.</li></ul></div></div></section>
+<div class="next-nav"><button class="btn" data-page-target="bookings" type="button">← Tickets</button><button class="btn btn-primary" data-page-target="checklist" type="button">Open master checklist →</button></div>
+</section>
+<!-- CHECKLIST -->
+<section class="app-page" data-page="checklist" hidden>
+<div class="page-hero" style="background-image:url('https://images.unsplash.com/photo-1492571350019-22de08371fd3?auto=format&amp;fit=crop&amp;w=1800&amp;q=85')"><div class="page-hero-content"><span class="eyebrow">Completion log</span><h1>Master Checklist</h1><p>All checkmarks are saved in this browser. Use this page before departure and the day-page checkboxes during the trip.</p><div class="day-meta"><span class="chip">Saved locally</span><span class="chip">Four-friends responsibilities</span><span class="chip">Phone friendly</span></div></div></div>
+<section class="section"><div class="checklist-layout">
+<div class="checklist-card"><h3>📄 India departure documents</h3><label class="check-row"><input data-check-id="c-passport" type="checkbox"/><span>Passports valid; secure copies shared</span></label><label class="check-row"><input data-check-id="c-visa" type="checkbox"/><span>Japan visa / entry requirements completed for all four</span></label><label class="check-row"><input data-check-id="c-vjw" type="checkbox"/><span>Visit Japan Web immigration and customs QR saved offline</span></label><label class="check-row"><input data-check-id="c-insurance" type="checkbox"/><span>Travel insurance includes medical, baggage and delay cover</span></label><label class="check-row"><input data-check-id="c-cards" type="checkbox"/><span>Two cards carried separately; international use enabled</span></label></div>
+<div class="checklist-card"><h3>✈️ Flights, airport and hotel</h3><label class="check-row"><input data-check-id="c-hotel" type="checkbox"/><span>Almont total and two Twin rooms confirmed</span></label><label class="check-row"><input data-check-id="c-inbound" type="checkbox"/><span>India→Tokyo flight, airport, landing time and terminal entered</span></label><label class="check-row"><input data-check-id="c-flight" type="checkbox"/><span>Return airport, operating carrier, terminal and baggage confirmed</span></label><label class="check-row"><input data-check-id="c-luggage" type="checkbox"/><span>Hotel luggage-storage policy screenshot saved</span></label><label class="check-row"><input data-check-id="c-airport" type="checkbox"/><span>Arrival and departure rail checked again on 24 Jan</span></label></div>
+<div class="checklist-card"><h3>🎟️ Timed reservations</h3><label class="check-row"><input data-check-id="c-museum" type="checkbox"/><span>Museum · 29 Jan · 10:00 · four tickets saved</span></label><label class="check-row"><input data-check-id="c-tower" type="checkbox"/><span>Tokyo Tower Main Deck QR saved</span></label><label class="check-row"><input data-check-id="c-shinkansen" type="checkbox"/><span>Tokyo⇄Odawara trains and seats confirmed</span></label><label class="check-row"><input data-check-id="c-skyliner" type="checkbox"/><span>Airport rail tickets / route screenshots saved</span></label><label class="check-row"><input data-check-id="c-optional" type="checkbox"/><span>Optional Shibuya Sky chosen or deliberately skipped</span></label></div>
+<div class="checklist-card"><h3>🍛 Indian meal plan</h3><label class="check-row"><input data-check-id="c-restaurants" type="checkbox"/><span>Restaurant hours reconfirmed 72 hours before each visit</span></label><label class="check-row"><input data-check-id="c-dinner-res" type="checkbox"/><span>Shibuya and bay-area dinner tables reserved for four</span></label><label class="check-row"><input data-check-id="c-diet" type="checkbox"/><span>Vegetarian, Jain, halal or allergy needs written in Japanese</span></label><label class="check-row"><input data-check-id="c-breakfast" type="checkbox"/><span>Breakfast plan agreed for each morning</span></label><label class="check-row"><input data-check-id="c-flight-food" type="checkbox"/><span>30 Jan carry-on breakfast purchased before packing</span></label></div>
+<div class="checklist-card"><h3>🧥 January packing</h3><label class="check-row"><input data-check-id="c-jacket" type="checkbox"/><span>Warm wind-resistant jacket</span></label><label class="check-row"><input data-check-id="c-layers" type="checkbox"/><span>Thermal base layers and sweaters</span></label><label class="check-row"><input data-check-id="c-shoes" type="checkbox"/><span>Broken-in walking shoes and spare socks</span></label><label class="check-row"><input data-check-id="c-gloves" type="checkbox"/><span>Gloves, beanie and compact umbrella</span></label><label class="check-row"><input data-check-id="c-meds" type="checkbox"/><span>Personal medicine, prescriptions and blister care</span></label></div>
+<div class="checklist-card"><h3>🔌 Tech and group system</h3><label class="check-row"><input data-check-id="c-esim" type="checkbox"/><span>eSIM installed before leaving India</span></label><label class="check-row"><input data-check-id="c-power" type="checkbox"/><span>Power banks charged; airline rules checked</span></label><label class="check-row"><input data-check-id="c-offline" type="checkbox"/><span>Offline maps, translation and ticket screenshots downloaded</span></label><label class="check-row"><input data-check-id="c-meet" type="checkbox"/><span>Lost-person rule: meet outside the last ticket gate</span></label><label class="check-row"><input data-check-id="c-cap" type="checkbox"/><span>Each person has a shopping limit and expense tracker</span></label></div>
+</div></section>
+<section class="section"><div class="section-head"><div><div class="section-kicker">Research and official checks</div><h2 class="section-title">Sources used to make the plan practical</h2><p class="section-subtitle">Traveller accounts informed the pacing; official sites provide current transport, hotel, attraction and restaurant details. Recheck all of them before January 2027.</p></div></div><p class="source-note">Indian traveller accounts consistently described setting up entry documents and transport first, using an IC card immediately, keeping the first day light and clustering districts. The itinerary applies those patterns while using conservative buffers for a group of four.</p><div class="source-list" style="margin-top:16px">
+<a class="source-link" href="https://socialmaharaj.com/2026/05/02/first-trip-to-japan-itinerary/" rel="noopener" target="_blank"><span>Indian first-trip account — itinerary, visa and food planning</span><b>↗</b></a><a class="source-link" href="https://goabhinav.blogspot.com/2026/06/the-quiet-and-shinkansen-indian.html" rel="noopener" target="_blank"><span>Indian family arrival account — airport, recovery and Indian food</span><b>↗</b></a><a class="source-link" href="https://dinnity.medium.com/japan-diaries-2026-8d5726892631" rel="noopener" target="_blank"><span>Indian group account — Narita, IC card and Skyliner</span><b>↗</b></a><a class="source-link" href="https://global.hokke.co.jp/almont-nippori/en/faq/" rel="noopener" target="_blank"><span>Almont Hotel — check-in and luggage storage</span><b>↗</b></a><a class="source-link" href="https://www.keisei.co.jp/keisei/tetudou/skyliner/us/" rel="noopener" target="_blank"><span>Keisei Skyliner — fare and timetable</span><b>↗</b></a><a class="source-link" href="https://www.jreast.co.jp/en/multi/welcomesuica/" rel="noopener" target="_blank"><span>JR East — Welcome Suica</span><b>↗</b></a><a class="source-link" href="https://ticket.tokyotower.co.jp/en/" rel="noopener" target="_blank"><span>Tokyo Tower — official ticket and hours</span><b>↗</b></a><a class="source-link" href="https://smart-ex.jp/en/" rel="noopener" target="_blank"><span>SmartEX — Shinkansen reservations</span><b>↗</b></a><a class="source-link" href="https://www.nirvanam.jp/en" rel="noopener" target="_blank"><span>Nirvanam — restaurant branches and hours</span><b>↗</b></a><a class="source-link" href="https://nataraj.co.jp/en/" rel="noopener" target="_blank"><span>Nataraj — Shibuya restaurant and dietary options</span><b>↗</b></a>
+</div></section>
+<div class="next-nav"><button class="btn" data-page-target="budget" type="button">← Budget</button><button class="btn btn-primary" data-page-target="overview" type="button">Back to overview →</button></div>
+</section>
+</main>
+<footer class="footer">
+<p><strong>TOKYO // FOUR · 27–31 January 2027</strong><br/>Relaxed planning reference updated 31 October 2026. Future schedules, restaurant hours and prices can change. This file is a planning tool, not a booking confirmation. Online images require internet; all itinerary text remains usable offline.</p>
+</footer>
+</div>
+<script>
+(() => {
+  "use strict";
+
+  const STORAGE_PREFIX = "tokyoCrew2027:";
+  const DEFAULT_RATE = 0.6000;
+  let fxRate = DEFAULT_RATE;
+  let tripConfig = { arrivalAirport: "NRT", arrivalTime: "07:30", arrivalFlight: "", departureAirport: "NRT", flightTerminal: "" };
+
+  const AIRPORTS = {
+    NRT: {
+      name: "Narita (NRT)", short: "Narita", clearance: 95, setup: 40, train: 40, walk: 25, cost: 2470,
+      arrivalRoute: "Keisei Skyliner → Nippori Station → five-minute walk → luggage storage at reception.",
+      arrivalTrainTitle: "Keisei Skyliner → Nippori",
+      arrivalTrainCopy: "Take the next reserved-seat Skyliner from Narita to Nippori. Use the luggage racks and keep one phone showing the live route.",
+      arrivalLink: "https://www.google.com/maps/dir/?api=1&origin=Narita+International+Airport&destination=Almont+Hotel+Nippori&travelmode=transit",
+      dep: { wake: "04:45", leave: "05:05", station: "05:20", train: "05:45", airport: "06:25", bed: "20:15", cost: 2470, trainLabel: "First practical Skyliner", title: "Early Narita Departure", routeTitle: "Nippori → Narita Airport", route: "Walk to Nippori, use the first practical Skyliner, and target the airport about 2.5 hours before the shown 08:55 flight.", link: "https://www.keisei.co.jp/keisei/tetudou/skyliner/us/" }
+    },
+    HND: {
+      name: "Haneda (HND)", short: "Haneda", clearance: 80, setup: 30, train: 55, walk: 25, cost: 730,
+      arrivalRoute: "Tokyo Monorail → Hamamatsucho → JR Yamanote Line → Nippori → five-minute walk.",
+      arrivalTrainTitle: "Tokyo Monorail + JR Yamanote → Nippori",
+      arrivalTrainCopy: "Take Tokyo Monorail to Hamamatsucho, transfer to the JR Yamanote Line and continue to Nippori. Allow extra time for lifts and the transfer with luggage.",
+      arrivalLink: "https://www.google.com/maps/dir/?api=1&origin=Haneda+Airport+Terminal+3&destination=Almont+Hotel+Nippori&travelmode=transit",
+      dep: { wake: "04:50", leave: "05:10", station: "05:20", train: "05:27", airport: "06:15", bed: "20:20", cost: 730, trainLabel: "JR + Tokyo Monorail", title: "Early Haneda Departure", routeTitle: "Nippori → Haneda Airport", route: "Use JR Yamanote to Hamamatsucho, transfer to Tokyo Monorail and target Terminal 3 around 06:15. Confirm the terminal printed on the ticket.", link: "https://www.tokyo-monorail.co.jp/english/" }
+    }
+  };
+
+  const pages = [...document.querySelectorAll(".app-page")];
+  const navButtons = [...document.querySelectorAll("[data-page-target]")];
+  const primaryNav = [...document.querySelectorAll(".page-nav [data-page-target]")];
+  const validPages = new Set(pages.map(page => page.dataset.page));
+
+  function pageTitle(name) {
+    const labels = { overview: "TOKYO // FOUR", day1: "Arrival Day", day2: "West Tokyo", day3: "Tower & Bay", day4: "Shinkansen Day", day5: "Flight", bookings: "Tickets", budget: "Budget", checklist: "Checklist" };
+    return `${labels[name] || "TOKYO // FOUR"} — Tokyo 2027`;
+  }
+
+  function showPage(name, updateHash = true) {
+    const pageName = validPages.has(name) ? name : "overview";
+    pages.forEach(page => { page.hidden = page.dataset.page !== pageName; });
+    primaryNav.forEach(button => {
+      if (button.dataset.pageTarget === pageName) button.setAttribute("aria-current", "page");
+      else button.removeAttribute("aria-current");
+    });
+    if (updateHash) history.replaceState(null, "", `#${pageName}`);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    document.title = pageTitle(pageName);
+  }
+
+  navButtons.forEach(button => button.addEventListener("click", () => showPage(button.dataset.pageTarget)));
+  window.addEventListener("hashchange", () => showPage(location.hash.slice(1), false));
+  showPage(location.hash.slice(1) || "overview", false);
+  document.getElementById("printBtn")?.addEventListener("click", () => window.print());
+
+  function formatINR(value) { return `₹${Math.abs(Math.round(Number(value) || 0)).toLocaleString("en-IN")}`; }
+  function formatJPY(value) { return `¥${Math.abs(Math.round(Number(value) || 0)).toLocaleString("en-US")}`; }
+  function bothFromINR(value) { const n = Number(value) || 0; return `${formatINR(n)} · ≈${formatJPY(fxRate > 0 ? n / fxRate : 0)}`; }
+  function bothFromJPY(value) { const n = Number(value) || 0; return `${formatJPY(n)} · ${formatINR(n * fxRate)}`; }
+  function rateText() { return `¥1 = ₹${fxRate.toFixed(4)}`; }
+
+  function setText(id, value) { const el = document.getElementById(id); if (el) el.textContent = value; }
+  function setHTML(id, value) { const el = document.getElementById(id); if (el) el.innerHTML = value; }
+  function num(id) { const value = Number(document.getElementById(id)?.value ?? 0); return Number.isFinite(value) ? value : 0; }
+
+  function renderCurrencyPairs() {
+    document.querySelectorAll("[data-jpy]").forEach(el => { const v = Number(el.dataset.jpy); if (Number.isFinite(v)) el.textContent = bothFromJPY(v); });
+    document.querySelectorAll("[data-inr]").forEach(el => { const v = Number(el.dataset.inr); if (Number.isFinite(v)) el.textContent = bothFromINR(v); });
+    setText("topFxBadge", rateText());
+    setText("fxCurrentText", rateText());
+    setText("budgetFxChip", `Saved FX: ${rateText()}`);
+  }
+
+  function saveFxRate(rate) { try { localStorage.setItem(STORAGE_PREFIX + "fxRate", String(rate)); } catch (_) {} }
+  function loadFxRate() {
+    try { const saved = Number(localStorage.getItem(STORAGE_PREFIX + "fxRate")); if (Number.isFinite(saved) && saved > 0) fxRate = saved; } catch (_) {}
+    const a = document.getElementById("fxRateOverview"); const b = document.getElementById("yenRate");
+    if (a) a.value = fxRate.toFixed(4); if (b) b.value = fxRate.toFixed(4);
+    renderCurrencyPairs();
+  }
+
+  function toMinutes(time) {
+    const [h, m] = String(time || "00:00").split(":").map(Number);
+    return ((h || 0) * 60 + (m || 0)) % 1440;
+  }
+  function fromMinutes(total) {
+    const n = ((Math.round(total) % 1440) + 1440) % 1440;
+    return `${String(Math.floor(n / 60)).padStart(2, "0")}:${String(n % 60).padStart(2, "0")}`;
+  }
+  function rangeHTML(start, end) { return `${fromMinutes(start)}<br/>–${fromMinutes(end)}`; }
+
+  function loadTripConfig() {
+    try {
+      const saved = JSON.parse(localStorage.getItem(STORAGE_PREFIX + "tripSetup") || "null");
+      if (saved && typeof saved === "object") tripConfig = { ...tripConfig, ...saved };
+    } catch (_) {}
+    ["arrivalAirport", "arrivalTime", "arrivalFlight", "departureAirport", "flightTerminal"].forEach(id => {
+      const el = document.getElementById(id); if (el && tripConfig[id] != null) el.value = tripConfig[id];
+    });
+  }
+
+  function saveTripConfig() {
+    try { localStorage.setItem(STORAGE_PREFIX + "tripSetup", JSON.stringify(tripConfig)); } catch (_) {}
+  }
+
+  function updateArrivalVisibility(mode, lunchPossible) {
+    document.querySelectorAll("[data-arrival-visibility]").forEach(item => {
+      const rule = item.dataset.arrivalVisibility;
+      const show = rule === mode || (rule === "early-mid" && (mode === "early" || mode === "mid")) || (rule === "lunch-possible" && lunchPossible);
+      item.hidden = !show;
+    });
+  }
+
+  function renderTripSetup(showSaved = false) {
+    const arrival = AIRPORTS[tripConfig.arrivalAirport] || AIRPORTS.NRT;
+    const departure = AIRPORTS[tripConfig.departureAirport] || AIRPORTS.NRT;
+    const landing = toMinutes(tripConfig.arrivalTime || "07:30");
+    const airportExit = landing + arrival.clearance;
+    const trainDepart = airportExit + arrival.setup;
+    const stationArrival = trainDepart + arrival.train;
+    const bagsStored = stationArrival + arrival.walk;
+    const lunchStart = Math.max(bagsStored + 10, 11 * 60);
+    const lunchEnd = lunchStart + 75;
+    const mode = bagsStored <= 11 * 60 + 45 ? "early" : (bagsStored <= 13 * 60 + 20 ? "mid" : "late");
+    const veryLate = bagsStored >= 18 * 60 + 30;
+    const lunchPossible = !veryLate && bagsStored <= 14 * 60 + 30;
+    const modeLabel = mode === "early" ? "FULL LIGHT DAY" : (mode === "mid" ? "REDUCED DAY" : (veryLate ? "AIRPORT MEAL + HOTEL" : (lunchPossible ? "LUNCH + HOTEL RESET" : "REST-ONLY ARRIVAL")));
+    const modeText = mode === "early"
+      ? "Your current inputs preserve lunch, a nearby walk, hotel rest and an easy east-Tokyo evening."
+      : (mode === "mid" ? "The nearby walk is removed. Lunch, at least 90 minutes of hotel rest and one easy evening district still fit without overlapping." : (veryLate ? "Eat before leaving the airport, go directly to the hotel and sleep. Do not attempt any Day 1 sightseeing." : (lunchPossible ? "Keep the Indian lunch, then check in and rest. All sightseeing is removed and dinner stays near Nippori." : "Skip the lunch block, check in, rest, eat near the hotel and protect sleep.")));
+
+    const walkStart = lunchEnd + 10;
+    const walkEnd = 14 * 60 + 20;
+    let restStart = 14 * 60 + 40;
+    let restEnd = 17 * 60;
+    let eveningStart = 17 * 60 + 20;
+    let eveningEnd = 19 * 60 + 5;
+    let dinnerStart = 19 * 60 + 20;
+    let dinnerEnd = 20 * 60 + 35;
+    let lateDinnerStart = Math.max(17 * 60, bagsStored + 120);
+    let lateDinnerEnd = lateDinnerStart + 75;
+    if (mode === "mid") {
+      restStart = Math.max(15 * 60, lunchEnd + 15);
+      restEnd = restStart + 105;
+      eveningStart = restEnd + 20;
+      eveningEnd = eveningStart + 90;
+      dinnerStart = eveningEnd + 15;
+      dinnerEnd = dinnerStart + 75;
+    } else if (mode === "late") {
+      restStart = Math.max(15 * 60, lunchPossible ? lunchEnd + 15 : bagsStored + 10);
+      restEnd = restStart + (veryLate ? 45 : 90);
+      lateDinnerStart = Math.max(lunchPossible ? 18 * 60 + 30 : 17 * 60, restEnd + 15);
+      lateDinnerEnd = lateDinnerStart + (veryLate ? 60 : 75);
+    }
+
+    setText("arrivalRouteTitle", `${arrival.name} → Almont Hotel Nippori`);
+    setText("arrivalTransferCost", bothFromJPY(arrival.cost));
+    setText("arrivalRouteText", arrival.arrivalRoute);
+    setText("arrivalLandingDisplay", fromMinutes(landing));
+    setText("arrivalExitDisplay", fromMinutes(airportExit));
+    setText("arrivalHotelDisplay", fromMinutes(bagsStored));
+    setText("arrivalAirportDisplay", arrival.name);
+    setText("arrivalLandingFact", `${fromMinutes(landing)} JST`);
+    setText("arrivalFlightDisplay", tripConfig.arrivalFlight.trim() || "India → Tokyo · flight not entered");
+    setText("arrivalModeText", modeText);
+    const pill = document.getElementById("arrivalModePill");
+    if (pill) { pill.textContent = modeLabel; pill.className = `mode-pill ${mode === "mid" ? "mid" : mode === "late" ? "late" : ""}`.trim(); }
+
+    setText("d1LandTime", ""); setHTML("d1LandTime", rangeHTML(landing, airportExit));
+    setHTML("d1SetupTime", rangeHTML(airportExit, trainDepart));
+    setHTML("d1TrainTime", rangeHTML(trainDepart, stationArrival));
+    setHTML("d1BagTime", rangeHTML(stationArrival, bagsStored));
+    setHTML("d1LunchTime", rangeHTML(lunchStart, lunchEnd));
+    if (mode === "early") setHTML("d1WalkTime", rangeHTML(walkStart, walkEnd));
+    else setText("d1WalkTime", "Removed");
+    setHTML("d1RestTime", rangeHTML(restStart, restEnd));
+    if (mode === "early" || mode === "mid") {
+      setHTML("d1EveningTime", rangeHTML(eveningStart, eveningEnd));
+      setHTML("d1DinnerTime", rangeHTML(dinnerStart, dinnerEnd));
+    } else {
+      setText("d1EveningTime", "Removed");
+      setText("d1DinnerTime", "Removed");
+    }
+    if (mode === "late" && veryLate) {
+      setHTML("d1LateDinnerTime", rangeHTML(lateDinnerStart, lateDinnerEnd));
+      setText("d1LateDinnerTitle", "Use the nearest open meal option and protect sleep");
+      setText("d1LateDinnerCopy", "After a very late arrival, an Indian restaurant cannot be guaranteed. Eat at the airport before the train if hungry, or use the nearest open option after check-in. Do not cross the city for dinner.");
+      setText("d1SleepTime", "Immediately after dinner");
+      setText("d1SleepCopy", "Complete only the essentials: shower, charge one phone, set alarms and sleep. Start Day 2 at 07:00 only if everyone has recovered; otherwise skip its first shopping block.");
+    } else if (mode === "late") {
+      setHTML("d1LateDinnerTime", rangeHTML(lateDinnerStart, lateDinnerEnd));
+      setText("d1LateDinnerTitle", "Eat near Nippori and end the day");
+      setText("d1LateDinnerCopy", lunchPossible ? "After the Indian lunch and hotel recovery, use Samrat Kitchen near Nippori for dinner. All sightseeing remains removed so the first evening stays calm." : "All Day 1 sightseeing is removed. Check in, rest and use Samrat Kitchen near Nippori for an early Indian dinner. The main sights remain on later days.");
+      setHTML("d1SleepTime", rangeHTML(lateDinnerEnd + 10, 22 * 60 + 30));
+      setText("d1SleepCopy", "Return directly to the hotel, prepare winter layers and tickets, charge devices and protect the 22:30 sleep target.");
+    } else {
+      setHTML("d1SleepTime", rangeHTML(20 * 60 + 45, 22 * 60 + 30));
+      setText("d1SleepCopy", "Return to Nippori, prepare winter layers and tickets, charge devices and stop phone use at 22:15. Sleep 22:30–07:00 = 8.5 hours.");
+    }
+    setText("d1RestCopy", mode === "early" ? "Rooms open from 15:00. Shower, change clothes, charge phones and lie down. Keep at least 90 minutes of actual rest; this protects the next three days." : (mode === "mid" ? "Check in as soon as the room opens, shower and keep at least 90 minutes of real rest. The evening starts only after this recovery block." : (lunchPossible ? "After lunch, check in as soon as the room opens, shower and take 90 minutes of real rest. No sightseeing follows." : "Check in immediately, shower and rest. Day 1 sightseeing has been removed so the arrival delay does not damage the rest of the trip.")));
+    setText("d1TrainTitle", arrival.arrivalTrainTitle);
+    setText("d1TrainCopy", arrival.arrivalTrainCopy);
+    setText("d1TrainDuration", `About ${arrival.train} min`);
+    setText("d1TrainCost", bothFromJPY(arrival.cost));
+    const arrivalLink = document.getElementById("arrivalRouteLink"); if (arrivalLink) arrivalLink.href = arrival.arrivalLink;
+    setText("day1AirportChip", `${arrival.short} plan`);
+    setText("day1SidebarAirport", arrival.short);
+    setText("day1SidebarBag", fromMinutes(bagsStored));
+    setText("day1SidebarMode", mode === "early" ? "Full light day" : mode === "mid" ? "Reduced day" : "Rest only");
+    setText("day1SidebarTransfer", bothFromJPY(arrival.cost));
+    const d1Total = arrival.cost + (mode === "late" ? (lunchPossible ? 3300 : 1800) : mode === "mid" ? 4230 : 4830);
+    setText("day1SidebarTotal", `~${bothFromJPY(d1Total)}`);
+    setText("day1CostChip", `~${bothFromJPY(d1Total)}`);
+    setText("day1SnapshotCost", bothFromJPY(d1Total));
+    setText("arrivalDaySummary", `Land ${fromMinutes(landing)} · bags stored about ${fromMinutes(bagsStored)} · ${mode === "early" ? "full light plan" : mode === "mid" ? "reduced plan" : "rest-only plan"}`);
+    setText("day1FallbackText", modeText);
+    updateArrivalVisibility(mode, lunchPossible);
+
+    const dep = departure.dep;
+    setText("departureRouteTitle", dep.routeTitle);
+    setText("departureTransferCost", bothFromJPY(dep.cost));
+    setText("departureRouteText", dep.route);
+    setText("departureAirportDisplay", `${departure.short} planning selection`);
+    setText("overviewDepWake", dep.wake); setText("overviewDepLeave", dep.leave); setText("overviewDepStation", dep.station); setText("overviewDepTrain", dep.train); setText("overviewDepAirport", dep.airport);
+    setText("day4SleepChip", `Sleep ${dep.bed}–${dep.wake}`);
+    setText("day4SleepText", `Sleep ${dep.bed}–${dep.wake} = 8.5 hours.`);
+    setText("day5Title", dep.title);
+    setText("day5Lead", `${dep.route} Revalidate the January 2027 timetable and airline deadline before travel.`);
+    setText("day5WakeChip", `Wake ${dep.wake}`);
+    setText("day5CostChip", `~${bothFromJPY(dep.cost + 500)}`);
+    setText("depWake", dep.wake); setText("depLeave", dep.leave); setText("depStation", dep.station); setText("depTrain", dep.train); setText("depAirport", dep.airport); setText("depTrainLabel", dep.trainLabel);
+    setHTML("d5WakeRange", rangeHTML(toMinutes(dep.wake), toMinutes(dep.leave)));
+    setHTML("d5WalkRange", rangeHTML(toMinutes(dep.leave), toMinutes(dep.station)));
+    setHTML("d5TrainRange", rangeHTML(toMinutes(dep.train), toMinutes(dep.airport)));
+    setHTML("d5AirportRange", rangeHTML(toMinutes(dep.airport), 8 * 60 + 10));
+    setText("d5TrainTitle", dep.routeTitle);
+    setText("d5TrainCopy", tripConfig.departureAirport === "NRT" ? "Use the first practical weekend Skyliner. Current schedules show an early service, but January 2027 times must be checked again one week before travel." : "Use JR Yamanote to Hamamatsucho and transfer to Tokyo Monorail for the terminal printed on the ticket. Recheck the first-train pattern before travel.");
+    setText("d5TrainCost", bothFromJPY(dep.cost));
+    const departureLink = document.getElementById("departureRouteLink"); if (departureLink) departureLink.href = dep.link;
+    setText("day5SidebarAirport", departure.short);
+    setText("day5SidebarArrival", dep.airport);
+    setText("departureDaySummary", `${departure.short} target: airport about ${dep.airport}`);
+    setText("day5SnapshotCost", bothFromJPY(dep.cost + 500));
+
+    const status = document.getElementById("tripSetupStatus");
+    if (status && showSaved) { status.textContent = `Saved. Day 1 now uses ${arrival.name}, landing ${fromMinutes(landing)}, and stores bags around ${fromMinutes(bagsStored)}.`; status.className = "setup-status saved"; }
+
+    updateAllProgress();
+    calculateBudget();
+  }
+
+  document.getElementById("tripSetupForm")?.addEventListener("submit", event => {
+    event.preventDefault();
+    tripConfig = {
+      arrivalAirport: document.getElementById("arrivalAirport")?.value || "NRT",
+      arrivalTime: document.getElementById("arrivalTime")?.value || "07:30",
+      arrivalFlight: document.getElementById("arrivalFlight")?.value || "",
+      departureAirport: document.getElementById("departureAirport")?.value || "NRT",
+      flightTerminal: document.getElementById("flightTerminal")?.value || ""
+    };
+    saveTripConfig();
+    renderTripSetup(true);
+  });
+
+  const allChecks = [...document.querySelectorAll("[data-check-id]")];
+  function setCheckVisual(check) { const card = check.closest(".timeline-card"); const row = check.closest(".check-row"); if (card) card.classList.toggle("done", check.checked); if (row) row.classList.toggle("done", check.checked); }
+  function updateDayProgress(day) {
+    const container = document.querySelector(`.timeline[data-day="${day}"]`); if (!container) return;
+    const checks = [...container.querySelectorAll(".visit-check")].filter(check => !check.closest(".timeline-item")?.hidden && !check.closest(".timeline-card")?.classList.contains("optional"));
+    const complete = checks.filter(check => check.checked).length; const percentage = checks.length ? Math.round(complete / checks.length * 100) : 0;
+    const fill = document.querySelector(`[data-progress-for="${day}"]`); const label = document.querySelector(`[data-progress-text="${day}"]`);
+    if (fill) fill.style.width = `${percentage}%`; if (label) label.textContent = `${complete} of ${checks.length} complete · ${percentage}%`;
+  }
+  function updateAllProgress() { ["day1","day2","day3","day4","day5"].forEach(updateDayProgress); }
+  allChecks.forEach(check => {
+    try { check.checked = localStorage.getItem(STORAGE_PREFIX + check.dataset.checkId) === "1"; } catch (_) {}
+    setCheckVisual(check);
+    check.addEventListener("change", () => { try { localStorage.setItem(STORAGE_PREFIX + check.dataset.checkId, check.checked ? "1" : "0"); } catch (_) {} setCheckVisual(check); updateAllProgress(); });
+  });
+  document.getElementById("resetBtn")?.addEventListener("click", () => {
+    if (!confirm("Reset every itinerary and packing checkmark on this device?")) return;
+    allChecks.forEach(check => { check.checked = false; setCheckVisual(check); try { localStorage.removeItem(STORAGE_PREFIX + check.dataset.checkId); } catch (_) {} }); updateAllProgress();
+  });
+
+  const budgetIds = ["budgetPP","travellers","returnFlight","inboundFlight","hotelNight","rooms","nights","hotelBuffer","yenRate","shoppingINR","esimINR","groundJPY","skyToggle","breakfastToggle"];
+  const budgetInputs = budgetIds.map(id => document.getElementById(id)).filter(Boolean);
+
+  function syncStaticMoney(returnFlight, inboundFlight, hotelNight, rooms, nights, travellers) {
+    const hotelGroupBase = hotelNight * rooms * nights; const hotelPersonBase = hotelGroupBase / Math.max(1, travellers);
+    setText("overviewReturnFare", bothFromINR(returnFlight)); const inboundText = inboundFlight > 0 ? bothFromINR(inboundFlight) : "Not entered";
+    setText("overviewInboundFare", inboundText); setText("bookingInboundFare", inboundText); setText("overviewHotelNight", bothFromINR(hotelNight));
+  }
+
+  function calculateBudget() {
+    if (!document.getElementById("budgetPP")) return;
+    const budgetPP = num("budgetPP"); const travellers = Math.max(1, num("travellers")); const returnFlight = num("returnFlight"); const inboundFlight = num("inboundFlight");
+    const hotelNight = num("hotelNight"); const rooms = Math.max(1, num("rooms")); const nights = Math.max(1, num("nights")); const hotelBuffer = Math.max(0, num("hotelBuffer")) / 100;
+    const shopping = num("shoppingINR"); const esim = num("esimINR"); const coreGroundJPY = num("groundJPY");
+    const skyJPY = document.getElementById("skyToggle")?.checked ? 3400 : 0; const breakfastJPY = document.getElementById("breakfastToggle")?.checked ? 2200 : 0;
+    const arrivalCost = (AIRPORTS[tripConfig.arrivalAirport] || AIRPORTS.NRT).cost; const departureCost = (AIRPORTS[tripConfig.departureAirport] || AIRPORTS.NRT).dep.cost; const airportJPY = arrivalCost + departureCost;
+    const hotelGroup = hotelNight * rooms * nights * (1 + hotelBuffer); const hotelPP = hotelGroup / travellers;
+    const cityJPY = coreGroundJPY + skyJPY + breakfastJPY; const groundINR = cityJPY * fxRate; const airportINR = airportJPY * fxRate; const extrasINR = shopping + esim;
+    const totalPP = returnFlight + inboundFlight + hotelPP + groundINR + airportINR + extrasINR; const remaining = budgetPP - totalPP; const groupTotal = totalPP * travellers; const ratio = budgetPP > 0 ? totalPP / budgetPP * 100 : 0;
+    const affordableHotelPP = budgetPP - returnFlight - inboundFlight - groundINR - airportINR - extrasINR; const maxHotelNight = affordableHotelPP > 0 ? affordableHotelPP * travellers / (rooms * nights * (1 + hotelBuffer)) : 0;
+
+    setText("totalPP", formatINR(totalPP)); setText("totalJPY", `≈ ${formatJPY(fxRate > 0 ? totalPP / fxRate : 0)}`); setText("outReturn", bothFromINR(returnFlight));
+    setText("outInbound", inboundFlight > 0 ? bothFromINR(inboundFlight) : "₹0 · not entered"); setText("outHotel", bothFromINR(hotelPP)); setText("outAirport", bothFromJPY(airportJPY)); setText("outGround", bothFromJPY(cityJPY)); setText("outExtras", bothFromINR(extrasINR)); setText("outTotal", bothFromINR(totalPP));
+    setText("remainingPP", `${remaining >= 0 ? "+" : "−"}${bothFromINR(Math.abs(remaining))}`); setText("groupTotal", bothFromINR(groupTotal)); setText("maxHotel", `${bothFromINR(maxHotelNight)} / room/night`);
+    setText("overviewBudgetTotal", bothFromINR(totalPP)); setText("overviewRemaining", `${remaining >= 0 ? "+" : "−"}${bothFromINR(Math.abs(remaining))}`);
+    setText("scenarioReturn", bothFromINR(returnFlight)); setText("scenarioInbound", inboundFlight > 0 ? bothFromINR(inboundFlight) : "Not entered"); setText("scenarioHotel", bothFromINR(hotelPP));
+    setText("scenarioGround", `${bothFromJPY(cityJPY + airportJPY)} + ${bothFromINR(extrasINR)} extras`); setText("scenarioTotal", bothFromINR(totalPP));
+    setText("scenarioNote", inboundFlight === 0 ? "This is not a complete round trip because the India → Tokyo fare is still zero." : (remaining >= 0 ? `The entered full plan is under budget by ${formatINR(remaining)} per person.` : `The entered full plan is over budget by ${formatINR(Math.abs(remaining))} per person.`));
+
+    const status = document.getElementById("budgetStatus"); const meter = document.getElementById("budgetMeter"); const under = remaining >= 0;
+    if (status) { status.textContent = under ? `UNDER BY ${formatINR(remaining)}` : `OVER BY ${formatINR(Math.abs(remaining))}`; status.classList.toggle("over", !under); }
+    if (meter) { meter.style.width = `${Math.min(Math.max(ratio, 0), 100)}%`; meter.classList.toggle("over", !under); }
+    const warning = document.getElementById("inboundWarning"); if (warning) warning.style.display = inboundFlight === 0 ? "grid" : "none";
+    syncStaticMoney(returnFlight, inboundFlight, hotelNight, rooms, nights, travellers);
+
+    try { const state = {}; budgetInputs.forEach(input => { state[input.id] = input.type === "checkbox" ? input.checked : input.value; }); localStorage.setItem(STORAGE_PREFIX + "budget", JSON.stringify(state)); } catch (_) {}
+  }
+
+  function applyRate(value, showMessage = false) {
+    const parsed = Number(value); const status = document.getElementById("fxStatus");
+    if (!Number.isFinite(parsed) || parsed <= 0) { if (status) { status.textContent = "Enter a positive number, such as 0.6000."; status.className = "fx-status error"; } return false; }
+    fxRate = parsed; const a = document.getElementById("fxRateOverview"); const b = document.getElementById("yenRate"); if (a && document.activeElement !== a) a.value = fxRate.toFixed(4); if (b && document.activeElement !== b) b.value = fxRate.toFixed(4);
+    saveFxRate(fxRate); renderCurrencyPairs(); renderTripSetup(false); calculateBudget();
+    if (status && showMessage) { status.textContent = `Saved ${rateText()} and updated every page.`; status.className = "fx-status saved"; }
+    return true;
+  }
+
+  function loadBudget() {
+    try { const state = JSON.parse(localStorage.getItem(STORAGE_PREFIX + "budget") || "null"); if (state && typeof state === "object") budgetInputs.forEach(input => { if (!(input.id in state)) return; if (input.type === "checkbox") input.checked = Boolean(state[input.id]); else if (input.id !== "yenRate") input.value = state[input.id]; }); } catch (_) {}
+    const rateInput = document.getElementById("yenRate"); if (rateInput) rateInput.value = fxRate.toFixed(4); calculateBudget();
+  }
+
+  document.getElementById("fxRateForm")?.addEventListener("submit", event => { event.preventDefault(); applyRate(document.getElementById("fxRateOverview")?.value, true); });
+  budgetInputs.forEach(input => { const eventName = input.type === "checkbox" ? "change" : "input"; input.addEventListener(eventName, () => { if (input.id === "yenRate") applyRate(input.value, false); else calculateBudget(); }); });
+
+  loadFxRate();
+  loadTripConfig();
+  loadBudget();
+  renderTripSetup(false);
+  updateAllProgress();
+})();
+</script>
+</body>
+</html>
